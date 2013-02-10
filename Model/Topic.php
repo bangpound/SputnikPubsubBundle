@@ -104,6 +104,14 @@ abstract class Topic implements TopicInterface
     /**
      * {@inheritdoc}
      */
+    public function incrementUpdatedAt()
+    {
+        $this->updatedAt = new \DateTime;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getHubName()
     {
         return $this->hubName;

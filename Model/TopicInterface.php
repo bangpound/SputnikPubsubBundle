@@ -54,8 +54,13 @@ interface TopicInterface
 
     /**
      * @return \DateTime
-    */
+     */
     public function getUpdatedAt();
+
+    /**
+     * @return void
+     */
+    public function incrementUpdatedAt();
 
     /**
      * @return string

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Sputnik\PubsubBundle\Entity\Topic" table="pubsub_topic" change-tracking-policy="DEFERRED_EXPLICIT" >
+
+        <lifecycle-callbacks>
+            <lifecycle-callback type="preUpdate" method="incrementUpdatedAt" />
+        </lifecycle-callbacks>
+
+        <id name="id" type="string" />
+        <field name="topicUrl" column="topic_url" />
+        <field name="topicSecret" column="topic_secret" />
+        <field name="hubName" column="hub_name" />
+        <field name="verified" column="is_verified" type="boolean" />
+        <field name="createdAt" column="date_created" type="datetime" />
+        <field name="updatedAt" column="date_updated" type="datetime" />
+
+    </entity>
+</doctrine-mapping>
