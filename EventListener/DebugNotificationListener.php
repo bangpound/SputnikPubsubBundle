@@ -1,11 +1,11 @@
 <?php
 
-namespace Sputnik\PubsubBundle\EventListener;
+namespace Sputnik\Bundle\PubsubBundle\EventListener;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Sputnik\PubsubBundle\PubsubEvents;
-use Sputnik\PubsubBundle\Event\NotificationReceivedEvent;
+use Sputnik\Bundle\PubsubBundle\PubsubEvents;
+use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
 
 /**
  * @package SputnikPubsubBundle_EventListener

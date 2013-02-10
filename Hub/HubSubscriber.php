@@ -1,13 +1,13 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Hub;
+namespace Sputnik\Bundle\PubsubBundle\Hub;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Sputnik\PubsubBundle\Generator\TopicGeneratorInterface;
-use Sputnik\PubsubBundle\Model\TopicManagerInterface;
-use Sputnik\PubsubBundle\Model\TopicInterface;
-use Sputnik\PubsubBundle\Event\TopicAwareEvent;
-use Sputnik\PubsubBundle\PubsubEvents;
+use Sputnik\Bundle\PubsubBundle\Generator\TopicGeneratorInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicManagerInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Event\TopicAwareEvent;
+use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 
 /**
  * @package SputnikPubsubBundle_Hub

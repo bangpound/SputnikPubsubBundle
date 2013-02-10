@@ -4,14 +4,27 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="service_pubsub.model.topic.class">Service\PubsubBundle\Entity\Topic</parameter>
-        <parameter key="service_pubsub.manager.topic.class">Service\PubsubBundle\Entity\TopicManager</parameter>
+        <parameter key="sputnik_pubsub.guzzle.class">Guzzle\Http\Client</parameter>
+        <parameter key="sputnik_pubsub.guzzle.log.monolog_adapter.class">Guzzle\Log\MonologLogAdapter</parameter>
+        <parameter key="sputnik_pubsub.guzzle.plugin.log.class">Guzzle\Plugin\Log\LogPlugin</parameter>
     </parameters>
 
     <services>
-        <service id="service_pubsub.manager.topic" class="%service_pubsub.manager.topic.class%">
-            <argument type="service" id="doctrine.orm.entity_manager" />
-            <argument>%service_pubsub.manager.topic.class%</argument>
+        <service id="sputnik_pubsub.guzzle" class="%sputnik_pubsub.guzzle.class%">
+            <call method="addSubscriber">
+                <argument type="service" id="sputnik_pubsub.guzzle.plugin.log" />
+            </call>
         </service>
+
+        <service id="sputnik_pubsub.guzzle.plugin.log" class="%sputnik_pubsub.guzzle.plugin.log.class%" public="false">
+            <argument type="service" id="sputnik_pubsub.guzzle.log.monolog_adapter" />
+        </service>
+
+        <service id="sputnik_pubsub.guzzle.log.monolog_adapter" class="%sputnik_pubsub.guzzle.log.monolog_adapter.class%" public="false">
+            <argument type="service" id="logger" />
+            <tag name="monolog.logger" channel="pubsub" />
+        </service>
+
+        <service id="sputnik_pubsub.http_client" alias="sputnik_pubsub.guzzle" />
     </services>
 </container>

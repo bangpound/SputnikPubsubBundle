@@ -1,14 +1,14 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Controller;
+namespace Sputnik\Bundle\PubsubBundle\Controller;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Sputnik\PubsubBundle\Model\TopicInterface;
-use Sputnik\PubsubBundle\Model\TopicManagerInterface;
-use Sputnik\PubsubBundle\Handler\NotificationHandlerInterface;
-use Sputnik\PubsubBundle\Hub\HubSubscriberInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicManagerInterface;
+use Sputnik\Bundle\PubsubBundle\Handler\NotificationHandlerInterface;
+use Sputnik\Bundle\PubsubBundle\Hub\HubSubscriberInterface;
 
 /**
  * @package SputnikPubsubBundle_Controller

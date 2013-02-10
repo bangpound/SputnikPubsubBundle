@@ -1,8 +1,8 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Generator;
+namespace Sputnik\Bundle\PubsubBundle\Generator;
 
-use Sputnik\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
 /**
  * @package SputnikPubsubBundle_Generator

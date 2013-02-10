@@ -1,12 +1,12 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Hub;
+namespace Sputnik\Bundle\PubsubBundle\Hub;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Guzzle\Http\ClientInterface as HttpClient;
 use Guzzle\Http\Exception\ClientErrorResponseException;
-use Sputnik\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
 /**
  * @package SputnikPubsubBundle_Hub

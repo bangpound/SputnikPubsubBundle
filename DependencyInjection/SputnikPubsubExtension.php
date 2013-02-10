@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle\DependencyInjection;
+namespace Sputnik\Bundle\PubsubBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

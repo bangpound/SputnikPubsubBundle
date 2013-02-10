@@ -1,11 +1,11 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Event;
+namespace Sputnik\Bundle\PubsubBundle\Event;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\EventDispatcher\Event;
-use Sputnik\PubsubBundle\Model\TopicInterface;
-use Sputnik\PubsubBundle\Event\TopicAwareEvent;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Event\TopicAwareEvent;
 
 /**
  * @package SputnikPubsubBundle_Event

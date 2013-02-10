@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Controller;
+namespace Sputnik\Bundle\PubsubBundle\Controller;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;

@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="Sputnik\PubsubBundle\Entity\Topic" table="pubsub_topic" change-tracking-policy="DEFERRED_EXPLICIT" >
+    <entity name="Sputnik\Bundle\PubsubBundle\Entity\Topic" table="pubsub_topic" change-tracking-policy="DEFERRED_EXPLICIT" >
 
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="incrementUpdatedAt" />
