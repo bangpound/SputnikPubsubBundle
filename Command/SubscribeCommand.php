@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Command;
+namespace Sputnik\Bundle\PubsubBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Output\OutputInterface;

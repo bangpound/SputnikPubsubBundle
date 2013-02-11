@@ -1,8 +1,8 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Entity;
+namespace Sputnik\Bundle\PubsubBundle\Entity;
 
-use Sputnik\PubsubBundle\Model\Topic as BaseTopic;
+use Sputnik\Bundle\PubsubBundle\Model\Topic as BaseTopic;
 
 /**
  * @package SputnikPubsubBundle_Entity

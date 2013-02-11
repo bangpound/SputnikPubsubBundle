@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle\DependencyInjection\Compiler;
+namespace Sputnik\Bundle\PubsubBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

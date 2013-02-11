@@ -1,9 +1,9 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Handler;
+namespace Sputnik\Bundle\PubsubBundle\Handler;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
-use Sputnik\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
 /**
  * @package SputnikPubsubBundle_Handler

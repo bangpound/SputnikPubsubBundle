@@ -1,8 +1,8 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Entity;
+namespace Sputnik\Bundle\PubsubBundle\Entity;
 
-use Sputnik\PubsubBundle\Model\TopicManagerInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicManagerInterface;
 use Sputnik\Common\Manager\DoctrineManager;
 
 /**

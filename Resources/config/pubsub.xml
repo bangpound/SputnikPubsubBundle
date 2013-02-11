@@ -4,14 +4,14 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="sputnik_pubsub.hub.provider.class">SputnikPubsubBundle\Hub\HubProvider</parameter>
-        <parameter key="sputnik_pubsub.hub.subscriber.class">SputnikPubsubBundle\Hub\HubSubscriber</parameter>
-        <parameter key="sputnik_pubsub.hub.request.class">SputnikPubsubBundle\Hub\HubRequest</parameter>
-        <parameter key="sputnik_pubsub.controller.callback.class">SputnikPubsubBundle\Controller\CallbackController</parameter>
-        <parameter key="sputnik_pubsub.controller.hub.class">SputnikPubsubBundle\Controller\HubController</parameter>
-        <parameter key="sputnik_pubsub.notification_handler.class">SputnikPubsubBundle\Handler\EventNotificationHandler</parameter>
-        <parameter key="sputnik_pubsub.event_listener.debug_notification.class">SputnikPubsubBundle\EventListener\DebugNotificationListener</parameter>
-        <parameter key="sputnik_pubsub.generator.class">SputnikPubsubBundle\Generator\TopicGenerator</parameter>
+        <parameter key="sputnik_pubsub.hub.provider.class">Sputnik\Bundle\PubsubBundle\Hub\HubProvider</parameter>
+        <parameter key="sputnik_pubsub.hub.subscriber.class">Sputnik\Bundle\PubsubBundle\Hub\HubSubscriber</parameter>
+        <parameter key="sputnik_pubsub.hub.request.class">Sputnik\Bundle\PubsubBundle\Hub\HubRequest</parameter>
+        <parameter key="sputnik_pubsub.controller.callback.class">Sputnik\Bundle\PubsubBundle\Controller\CallbackController</parameter>
+        <parameter key="sputnik_pubsub.controller.hub.class">Sputnik\Bundle\PubsubBundle\Controller\HubController</parameter>
+        <parameter key="sputnik_pubsub.notification_handler.class">Sputnik\Bundle\PubsubBundle\Handler\EventNotificationHandler</parameter>
+        <parameter key="sputnik_pubsub.event_listener.debug_notification.class">Sputnik\Bundle\PubsubBundle\EventListener\DebugNotificationListener</parameter>
+        <parameter key="sputnik_pubsub.generator.class">Sputnik\Bundle\PubsubBundle\Generator\TopicGenerator</parameter>
         <parameter key="sputnik_pubsub.event_dispatcher.class">Symfony\Component\EventDispatcher\EventDispatcher</parameter>
     </parameters>
 

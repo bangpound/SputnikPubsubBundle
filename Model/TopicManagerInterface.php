@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Model;
+namespace Sputnik\Bundle\PubsubBundle\Model;
 
 use Sputnik\Common\Manager\ManagerInterface;
 

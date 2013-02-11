@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Command;
+namespace Sputnik\Bundle\PubsubBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -64,7 +64,7 @@ class PushCommand extends ContainerAwareCommand
         $body = file_get_contents($filepath);
         $signature = hash_hmac('sha1', $body, $topic->getTopicSecret());
 
-        $client = $this->container->get('sputnik_pubsub.http_client');
+        $client = $this->getContainer()->get('sputnik_pubsub.http_client');
         $response = $client->post($callback, array('X-Hub-Signature' => 'sha1=' . $signature), $body)->send();
         if ($response->getStatusCode() !== 200) {
             $output->writeln(sprintf('<error>HTTP code returned: %d</error>', $response->getStatusCode()));

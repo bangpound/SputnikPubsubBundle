@@ -1,9 +1,9 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Event;
+namespace Sputnik\Bundle\PubsubBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use Sputnik\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
 /**
  * @package SputnikPubsubBundle_Event

@@ -1,11 +1,11 @@
 <?php
 
-namespace Sputnik\PubsubBundle;
+namespace Sputnik\Bundle\PubsubBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Sputnik\PubsubBundle\DependencyInjection\Compiler\AddHubSubscriberPass;
-use Sputnik\PubsubBundle\DependencyInjection\Compiler\AddNotificationListenerPass;
+use Sputnik\Bundle\PubsubBundle\DependencyInjection\Compiler\AddHubSubscriberPass;
+use Sputnik\Bundle\PubsubBundle\DependencyInjection\Compiler\AddNotificationListenerPass;
 
 /**
  * @package SputnikPubsubBundle_Bundle

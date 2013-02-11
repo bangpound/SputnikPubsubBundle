@@ -1,12 +1,12 @@
 <?php
 
-namespace Sputnik\PubsubBundle\Handler;
+namespace Sputnik\Bundle\PubsubBundle\Handler;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\HeaderBag;
-use Sputnik\PubsubBundle\Event\NotificationReceivedEvent;
-use Sputnik\PubsubBundle\Model\TopicInterface;
-use Sputnik\PubsubBundle\PubsubEvents;
+use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
+use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
+use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 
 /**
  * @package SputnikPubsubBundle_Handler

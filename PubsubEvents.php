@@ -1,6 +1,6 @@
 <?php
 
-namespace Sputnik\PubsubBundle;
+namespace Sputnik\Bundle\PubsubBundle;
 
 /**
  * @package SputnikPubsubBundle_Bundle

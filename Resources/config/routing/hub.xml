@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="service_pubsub_hub_process" path="/{name}">
-        <default key="_controller">service_pubsub.controller.hub:process</default>
+    <route id="sputnik_pubsub_hub_process" path="/{name}">
+        <default key="_controller">sputnik_pubsub.controller.hub:process</default>
     </route>
 </routes>
