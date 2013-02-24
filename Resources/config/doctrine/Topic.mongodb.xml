@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
-    <document name="Sputnik\Bundle\PubsubBundle\Document\Topic" collection="pubsub_topic">
+    <document name="Sputnik\Bundle\PubsubBundle\Document\Topic" collection="pubsub.topic">
         <field name="id" id="true" strategy="NONE" type="string" />
         <field name="topic_url" fieldName="topicUrl" type="string" />
         <field name="topic_secret" fieldName="topicSecret" type="string" />
