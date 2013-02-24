@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "sputnik/common": "0.1.*",
+        "sputnik/common": "~0.1.0",
         "symfony/framework-bundle": "2.2.*",
         "guzzle/http": "3.1.*",
         "guzzle/log": "3.1.*",
