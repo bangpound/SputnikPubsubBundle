@@ -25,7 +25,7 @@ class HubProvider implements HubProviderInterface
     public function addHub(HubInterface $hub)
     {
         if (isset($this->hubs[$hub->getName()])) {
-            throw new \RuntimeException(sprintf('hub "%s" is already registered', $hub->getName()));
+            throw new \InvalidArgumentException(sprintf('hub "%s" is already registered', $hub->getName()));
         }
 
         $this->hubs[$hub->getName()] = $hub;
@@ -60,6 +60,6 @@ class HubProvider implements HubProviderInterface
      */
     public function getHubs()
     {
-        return $this->hubs;
+        return array_values($this->hubs);
     }
 }
