@@ -21,11 +21,16 @@ class SputnikPubsubExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
         $loader->load('pubsub.xml');
-        $loader->load('orm.xml');
         $loader->load('client.xml');
 
         if ($config['test_hub']) {
             $container->getDefinition('sputnik_pubsub.hub.request')->replaceArgument(4, $config['hub_test_route']);
+        }
+
+        if ($config['driver'] === 'doctrine') {
+            $loader->load('orm.xml');
+        } elseif ($config['driver'] === 'doctrine_mongo') {
+            $loader->load('odm.xml');
         }
 
         $container->setParameter('sputnik_pubsub.route', $config['route']);
