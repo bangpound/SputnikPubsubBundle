@@ -1,0 +1,31 @@
+Model\SputnikPubsubBundle\Topic:
+    collection: pubsub.topic
+    idGenerator: none
+    fields:
+        topicUrl:
+            type: string
+            dbName: topic_url
+        topicSecret:
+            type: string
+            dbName: topic_secret
+        hubName:
+            type: string
+            dbName: hub_name
+        verified:
+            type: boolean
+            dbName: is_verified
+        createdAt:
+            type: date
+            dbName: date_created
+        updatedAt:
+            type: date
+            dbName: date_updated
+
+    Sputnik\Bundle\PubsubBundle\Mandango\Topic:
+        Model\SputnikPubsubBundle\Base\Topic
+
+    model_dir: Mandango
+
+    events:
+        preUpdate:
+            - incrementUpdatedAt
