@@ -23,6 +23,13 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('test_hub')->defaultFalse()->end()
                 ->scalarNode('route')->defaultValue('sputnik_pubsub_callback_process')->end()
                 ->scalarNode('hub_test_route')->defaultValue('sputnik_pubsub_hub_process')->end()
+                ->scalarNode('driver')
+                    ->defaultValue('doctrine')
+                    ->validate()
+                        ->ifNotInArray(array('doctrine', 'doctrine_mongo', 'mandango'))
+                        ->thenInvalid('Invalid driver: %s (allowed values: doctrine, doctrine_mongo, mandango)')
+                    ->end()
+                ->end()
             ->end()
         ;
 
