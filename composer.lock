@@ -1,5 +1,5 @@
 {
-    "hash": "ed34c551922af875fe65df0c7ff4dd27",
+    "hash": "f0828a627b737e634feca40bc32201e6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -722,12 +722,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sputnik-project/common.git",
-                "reference": "bd0110a08cb7d629df3e81a45ccbda2403c4f878"
+                "reference": "d547012b0be18d21517130c69c5e2daf39e4062d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sputnik-project/common/zipball/bd0110a08cb7d629df3e81a45ccbda2403c4f878",
-                "reference": "bd0110a08cb7d629df3e81a45ccbda2403c4f878",
+                "url": "https://api.github.com/repos/sputnik-project/common/zipball/d547012b0be18d21517130c69c5e2daf39e4062d",
+                "reference": "d547012b0be18d21517130c69c5e2daf39e4062d",
                 "shasum": ""
             },
             "require": {
@@ -737,7 +737,7 @@
             "require-dev": {
                 "doctrine/orm": "2.*",
                 "mandango/mandango": "dev-master",
-                "mandango/mondator": "dev-master",
+                "mandango/mondator": "@dev",
                 "pagerfanta/pagerfanta": "dev-master",
                 "symfony/dependency-injection": "2.*"
             },
@@ -748,7 +748,7 @@
                 "pagerfanta/pagerfanta": "*",
                 "symfony/dependency-injection": "2.*"
             },
-            "time": "2013-02-04 01:11:48",
+            "time": "2013-02-24 18:00:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -782,18 +782,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "v2.2.0-RC3"
+                "reference": "3af40615f2d486847d3a9f939612f8e8d08653f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/3af40615f2d486847d3a9f939612f8e8d08653f0",
+                "reference": "3af40615f2d486847d3a9f939612f8e8d08653f0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-17 12:27:42",
+            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -985,12 +985,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/FrameworkBundle.git",
-                "reference": "v2.2.0-RC3"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/FrameworkBundle/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
+                "url": "https://api.github.com/repos/symfony/FrameworkBundle/zipball/v2.2.0",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -1016,7 +1016,7 @@
                 "symfony/form": "2.2.*",
                 "symfony/validator": "2.2.*"
             },
-            "time": "2013-02-23 06:46:07",
+            "time": "2013-03-01 06:43:14",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1052,18 +1052,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "v2.2.0-RC3"
+                "reference": "d154b0d9a6b5dac26413a314df1846abe197aaef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/d154b0d9a6b5dac26413a314df1846abe197aaef",
+                "reference": "d154b0d9a6b5dac26413a314df1846abe197aaef",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-23 06:46:07",
+            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "9d4d5faa155758271dbad73c392afb7cfac12c3e"
+                "reference": "0f00a19f8ed753d97ff49ffceda04e5878ad9d3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/9d4d5faa155758271dbad73c392afb7cfac12c3e",
-                "reference": "9d4d5faa155758271dbad73c392afb7cfac12c3e",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/0f00a19f8ed753d97ff49ffceda04e5878ad9d3d",
+                "reference": "0f00a19f8ed753d97ff49ffceda04e5878ad9d3d",
                 "shasum": ""
             },
             "require": {
@@ -1135,7 +1135,7 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/finder": "2.2.*"
             },
-            "time": "2013-02-24 13:09:41",
+            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1372,261 +1372,7 @@
             "homepage": "http://symfony.com"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "doctrine/dbal",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/dbal.git",
-                "reference": "65806f5998f3ac23b8b2f5c58acb1cd9881e8fd4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/65806f5998f3ac23b8b2f5c58acb1cd9881e8fd4",
-                "reference": "65806f5998f3ac23b8b2f5c58acb1cd9881e8fd4",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": "2.4.x-dev",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/console": "2.*"
-            },
-            "suggest": {
-                "symfony/console": "For helpful console commands such as SQL execution and import of files."
-            },
-            "time": "2013-02-21 07:37:15",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\DBAL\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
-                },
-                {
-                    "name": "Christoph Dorn",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                }
-            ],
-            "description": "Database Abstraction Layer",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "database",
-                "dbal",
-                "persistence",
-                "queryobject"
-            ]
-        },
-        {
-            "name": "doctrine/doctrine-bundle",
-            "version": "dev-master",
-            "target-dir": "Doctrine/Bundle/DoctrineBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "v1.2.0-beta1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/v1.2.0-beta1",
-                "reference": "v1.2.0-beta1",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": ">=2.2,<2.5-dev",
-                "jdorn/sql-formatter": ">=1.1,<2.0",
-                "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "2.2.*",
-                "symfony/framework-bundle": ">=2.2.0-beta2,<2.3-dev"
-            },
-            "require-dev": {
-                "doctrine/orm": ">=2.2,<2.5-dev",
-                "symfony/validator": "2.2.*",
-                "symfony/yaml": "2.2.*"
-            },
-            "suggest": {
-                "doctrine/orm": "The Doctrine ORM integration is optional in the bundle.",
-                "symfony/web-profiler-bundle": "to use the data collector"
-            },
-            "time": "2013-01-12 14:41:19",
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Bundle\\DoctrineBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                }
-            ],
-            "description": "Symfony DoctrineBundle",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "database",
-                "dbal",
-                "orm",
-                "persistence"
-            ]
-        },
-        {
-            "name": "jdorn/sql-formatter",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jdorn/sql-formatter.git",
-                "reference": "3d8a97325e5894c72dd5c4d4f83dd3722d414d99"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/3d8a97325e5894c72dd5c4d4f83dd3722d414d99",
-                "reference": "3d8a97325e5894c72dd5c4d4f83dd3722d414d99",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "time": "2013-02-22 05:16:19",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "lib"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "Jeremy Dorn",
-                    "email": "jeremy@jeremydorn.com",
-                    "homepage": "http://jeremydorn.com/"
-                }
-            ],
-            "description": "a PHP SQL highlighting library",
-            "homepage": "https://github.com/jdorn/sql-formatter/",
-            "keywords": [
-                "highlight",
-                "sql"
-            ]
-        },
-        {
-            "name": "symfony/doctrine-bridge",
-            "version": "2.2.x-dev",
-            "target-dir": "Symfony/Bridge/Doctrine",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/DoctrineBridge.git",
-                "reference": "v2.2.0-RC3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DoctrineBridge/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": ">=2.2,<3.0",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "doctrine/data-fixtures": "1.0.*",
-                "doctrine/dbal": ">=2.2,<3.0",
-                "doctrine/orm": ">=2.2,<3.0,>=2.2.3",
-                "symfony/dependency-injection": ">=2.0,<3.0",
-                "symfony/form": ">=2.2,<2.3-dev",
-                "symfony/http-kernel": ">=2.2,<2.3-dev",
-                "symfony/security": ">=2.2,<2.3-dev",
-                "symfony/stopwatch": ">=2.2,<2.3-dev",
-                "symfony/validator": ">=2.2,<2.3-dev"
-            },
-            "suggest": {
-                "doctrine/data-fixtures": "1.0.*",
-                "doctrine/dbal": "~2.2",
-                "doctrine/orm": "~2.2,>=2.2.3",
-                "symfony/form": "2.2.*",
-                "symfony/validator": "2.2.*"
-            },
-            "time": "2013-02-19 07:14:41",
-            "type": "symfony-bridge",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Bridge\\Doctrine\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Doctrine Bridge",
-            "homepage": "http://symfony.com"
-        }
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
