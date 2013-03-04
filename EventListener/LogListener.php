@@ -10,7 +10,7 @@ use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
 /**
  * @package SputnikPubsubBundle_EventListener
  */
-class DebugNotificationListener implements EventSubscriberInterface
+class LogListener implements EventSubscriberInterface
 {
     private $logger;
 

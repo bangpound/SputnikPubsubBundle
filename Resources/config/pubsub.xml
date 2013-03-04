@@ -10,7 +10,7 @@
         <parameter key="sputnik_pubsub.controller.callback.class">Sputnik\Bundle\PubsubBundle\Controller\CallbackController</parameter>
         <parameter key="sputnik_pubsub.controller.hub.class">Sputnik\Bundle\PubsubBundle\Controller\HubController</parameter>
         <parameter key="sputnik_pubsub.notification_handler.class">Sputnik\Bundle\PubsubBundle\Handler\EventNotificationHandler</parameter>
-        <parameter key="sputnik_pubsub.event_listener.debug_notification.class">Sputnik\Bundle\PubsubBundle\EventListener\DebugNotificationListener</parameter>
+        <parameter key="sputnik_pubsub.event_listener.log.class">Sputnik\Bundle\PubsubBundle\EventListener\LogListener</parameter>
         <parameter key="sputnik_pubsub.generator.class">Sputnik\Bundle\PubsubBundle\Generator\TopicGenerator</parameter>
         <parameter key="sputnik_pubsub.event_dispatcher.class">Symfony\Component\EventDispatcher\EventDispatcher</parameter>
     </parameters>
@@ -54,7 +54,7 @@
             <argument type="service" id="sputnik_pubsub.event_dispatcher" />
         </service>
 
-        <service id="sputnik_pubsub.event_listener.debug_notification" class="%sputnik_pubsub.event_listener.debug_notification.class%" public="false">
+        <service id="sputnik_pubsub.event_listener.log" class="%sputnik_pubsub.event_listener.log.class%" public="false">
             <argument type="service" id="logger" />
             <tag name="sputnik_pubsub.event_subscriber" />
             <tag name="monolog.logger" channel="pubsub" />
