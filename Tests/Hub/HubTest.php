@@ -4,10 +4,6 @@ namespace Sputnik\Bundle\PubsubBundle\Tests\Hub;
 
 use Sputnik\Bundle\PubsubBundle\Hub\Hub;
 
-/**
- * @package SputnikPubsubBundle_Tests
- * @subpackage Hub
- */
 class HubTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstantiationAndGetters()

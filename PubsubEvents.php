@@ -2,9 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle;
 
-/**
- * @package SputnikPubsubBundle_Bundle
- */
 final class PubsubEvents
 {
     const NOTIFICATION_RECEIVED = 'notification.received';

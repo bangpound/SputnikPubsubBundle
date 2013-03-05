@@ -5,9 +5,6 @@ namespace Sputnik\Bundle\PubsubBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-/**
- * @package SputnikPubsubBundle_DependencyInjection
- */
 class Configuration implements ConfigurationInterface
 {
     /**

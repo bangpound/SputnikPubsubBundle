@@ -10,8 +10,6 @@ use Symfony\Component\Console\Input\InputInterface;
 
 /**
  * Push test notification to topic.
- *
- * @package SputnikPubsubBundle_Command
  */
 class PushCommand extends ContainerAwareCommand
 {

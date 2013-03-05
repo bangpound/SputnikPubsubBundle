@@ -7,9 +7,6 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
-/**
- * @package SputnikPubsubBundle_DependencyInjection
- */
 class SputnikPubsubExtension extends Extension
 {
     /**

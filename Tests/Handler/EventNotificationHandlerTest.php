@@ -9,10 +9,6 @@ use Sputnik\Bundle\PubsubBundle\Handler\EventNotificationHandler;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\HeaderBag;
 
-/**
- * @package SputnikPubsubBundle_Tests
- * @subpackage Handler
- */
 class EventNotificationHandlerTest extends \PHPUnit_Framework_TestCase
 {
     /**

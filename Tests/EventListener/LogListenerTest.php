@@ -9,10 +9,6 @@ use Sputnik\Bundle\PubsubBundle\EventListener\LogListener;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-/**
- * @package SputnikPubsubBundle_Tests
- * @subpackage EventListener
- */
 class LogListenerTest extends \PHPUnit_Framework_TestCase
 {
     /**

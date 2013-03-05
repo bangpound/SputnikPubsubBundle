@@ -2,9 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Model;
 
-/**
- * @package SputnikPubsubBundle_Model
- */
 interface TopicInterface
 {
     /**

@@ -10,8 +10,6 @@ use Guzzle\Http\Exception\ClientErrorResponseException;
 
 /**
  * Simple Hub implementation.
- *
- * @package SputnikPubsubBundle_Controller
  */
 class HubController
 {

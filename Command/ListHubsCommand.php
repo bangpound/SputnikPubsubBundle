@@ -8,8 +8,6 @@ use Symfony\Component\Console\Input\InputInterface;
 
 /**
  * List registered hubs.
- *
- * @package SputnikPubsubBundle_Command
  */
 class ListHubsCommand extends ContainerAwareCommand
 {

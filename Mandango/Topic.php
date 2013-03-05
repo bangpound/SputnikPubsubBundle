@@ -4,9 +4,6 @@ namespace Sputnik\Bundle\PubsubBundle\Mandango;
 
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
-/**
- * @package SputnikPubsubBundle_Mandango
- */
 abstract class Topic extends \Model\SputnikPubsubBundle\Base\Topic implements TopicInterface
 {
     public function initializeDefaults()

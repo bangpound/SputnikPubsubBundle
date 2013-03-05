@@ -5,10 +5,6 @@ namespace Sputnik\Bundle\PubsubBundle\Tests\Generator;
 use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\SampleTopic;
 use Sputnik\Bundle\PubsubBundle\Generator\TopicGenerator;
 
-/**
- * @package SputnikPubsubBundle_Tests
- * @subpackage Generator
- */
 class TopicGeneratorTest extends \PHPUnit_Framework_TestCase
 {
     public function testGenerateTopicId()

@@ -2,9 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Hub;
 
-/**
- * @package SputnikPubsubBundle_Hub
- */
 class HubProvider implements HubProviderInterface
 {
     private $hubs = array();

@@ -8,9 +8,6 @@ use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 
-/**
- * @package SputnikPubsubBundle_Handler
- */
 class EventNotificationHandler implements NotificationHandlerInterface
 {
     private $dispatcher;

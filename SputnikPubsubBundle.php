@@ -7,9 +7,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Sputnik\Bundle\PubsubBundle\DependencyInjection\Compiler\AddHubSubscriberPass;
 use Sputnik\Bundle\PubsubBundle\DependencyInjection\Compiler\AddNotificationListenerPass;
 
-/**
- * @package SputnikPubsubBundle_Bundle
- */
 class SputnikPubsubBundle extends Bundle
 {
     /**

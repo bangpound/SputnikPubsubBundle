@@ -2,9 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Model;
 
-/**
- * @package SputnikPubsubBundle_Model
- */
 abstract class Topic implements TopicInterface
 {
     protected $id;

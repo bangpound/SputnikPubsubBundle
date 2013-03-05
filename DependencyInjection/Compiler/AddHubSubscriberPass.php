@@ -6,10 +6,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * @package SputnikPubsubBundle_DependencyInjection
- * @subpackage Compiler
- */
 class AddHubSubscriberPass implements CompilerPassInterface
 {
     /**

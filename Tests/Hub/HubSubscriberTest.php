@@ -9,10 +9,6 @@ use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\SampleHub;
 use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\Topic;
 use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\SampleTopic;
 
-/**
- * @package SputnikPubsubBundle_Tests
- * @subpackage Hub
- */
 class HubSubscriberTest extends \PHPUnit_Framework_TestCase
 {
     private $eventDispatcher;

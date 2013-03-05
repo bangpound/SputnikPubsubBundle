@@ -7,10 +7,6 @@ use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\SampleTopic;
 use Sputnik\Bundle\PubsubBundle\Hub\HubSubscriberInterface;
 use Sputnik\Bundle\PubsubBundle\Hub\HubRequest;
 
-/**
- * @package SputnikPubsubBundle_Tests
- * @subpackage Hub
- */
 class HubRequestTest extends \PHPUnit_Framework_TestCase
 {
     private $generator;

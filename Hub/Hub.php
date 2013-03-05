@@ -2,9 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Hub;
 
-/**
- * @package SputnikPubsubBundle_Hub
- */
 class Hub implements HubInterface
 {
     private $name;

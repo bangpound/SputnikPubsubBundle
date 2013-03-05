@@ -10,8 +10,6 @@ use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Subscribe or unsubscribe.
- *
- * @package SputnikPubsubBundle_Command
  */
 class SubscribeCommand extends ContainerAwareCommand
 {

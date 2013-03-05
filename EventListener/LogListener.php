@@ -7,9 +7,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
 
-/**
- * @package SputnikPubsubBundle_EventListener
- */
 class LogListener implements EventSubscriberInterface
 {
     private $logger;

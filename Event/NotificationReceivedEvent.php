@@ -7,9 +7,6 @@ use Symfony\Component\EventDispatcher\Event;
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 use Sputnik\Bundle\PubsubBundle\Event\TopicAwareEvent;
 
-/**
- * @package SputnikPubsubBundle_Event
- */
 class NotificationReceivedEvent extends TopicAwareEvent
 {
     private $headers;

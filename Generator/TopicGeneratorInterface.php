@@ -4,9 +4,6 @@ namespace Sputnik\Bundle\PubsubBundle\Generator;
 
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
-/**
- * @package SputnikPubsubBundle_Generator
- */
 interface TopicGeneratorInterface
 {
     /**

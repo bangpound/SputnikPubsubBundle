@@ -2,9 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Hub;
 
-/**
- * @package SputnikPubsubBundle_Hub
- */
 interface HubSubscriberInterface
 {
     const SUBSCRIBE   = 'subscribe';

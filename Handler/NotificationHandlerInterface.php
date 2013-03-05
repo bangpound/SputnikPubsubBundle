@@ -5,9 +5,6 @@ namespace Sputnik\Bundle\PubsubBundle\Handler;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
-/**
- * @package SputnikPubsubBundle_Handler
- */
 interface NotificationHandlerInterface
 {
     /**

@@ -9,9 +9,6 @@ use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 use Sputnik\Bundle\PubsubBundle\Event\TopicAwareEvent;
 use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 
-/**
- * @package SputnikPubsubBundle_Hub
- */
 class HubSubscriber implements HubSubscriberInterface
 {
     private $manager;

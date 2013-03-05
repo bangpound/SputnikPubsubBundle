@@ -10,9 +10,6 @@ use Sputnik\Bundle\PubsubBundle\Model\TopicManagerInterface;
 use Sputnik\Bundle\PubsubBundle\Handler\NotificationHandlerInterface;
 use Sputnik\Bundle\PubsubBundle\Hub\HubSubscriberInterface;
 
-/**
- * @package SputnikPubsubBundle_Controller
- */
 class CallbackController
 {
     private $manager;

@@ -5,9 +5,6 @@ namespace Sputnik\Bundle\PubsubBundle\Event;
 use Symfony\Component\EventDispatcher\Event;
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
-/**
- * @package SputnikPubsubBundle_Event
- */
 class TopicAwareEvent extends Event
 {
     private $topic;

@@ -8,9 +8,6 @@ use Guzzle\Http\ClientInterface as HttpClient;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
-/**
- * @package SputnikPubsubBundle_Hub
- */
 class HubRequest
 {
     private $urlGenerator;
