@@ -27,6 +27,7 @@
                 <directory>./Entity</directory>
                 <directory>./Document</directory>
                 <directory>./Mandango</directory>
+                <directory>./Command</directory>
             </exclude>
         </whitelist>
     </filter>
