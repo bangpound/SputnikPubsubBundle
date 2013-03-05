@@ -22,7 +22,18 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
         $this->httpClient = $this->getMockBuilder('Guzzle\\Http\\Client')->setMethods(array('post', 'addPostFields'))->getMock();
     }
 
-    public function testSubscribe()
+    public function getHubSubscriptionModes()
+    {
+        return array(
+            array(HubSubscriberInterface::SUBSCRIBE),
+            array(HubSubscriberInterface::UNSUBSCRIBE)
+        );
+    }
+
+    /**
+     * @dataProvider getHubSubscriptionModes()
+     */
+    public function testSubscribe($mode)
     {
         $hub = new SampleHub();
         $topic = new SampleTopic();
@@ -39,7 +50,7 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
 
         // POST params to send: regular hub.* values + parameters unique to hub.
         $parameters = array_merge(array(
-            'hub.mode'     => HubSubscriberInterface::SUBSCRIBE,
+            'hub.mode'     => $mode,
             'hub.verify'   => 'sync',
             'hub.callback' => 'http://my-callback-url',
             'hub.topic'    => $topic->getTopicUrl(),
@@ -48,7 +59,7 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
 
         $this->assertPostToUrlReturns($hub->getUrl(), $parameters, 204);
 
-        $result = $request->sendRequest(HubSubscriberInterface::SUBSCRIBE, $topic, $hub);
+        $result = $request->sendRequest($mode, $topic, $hub);
         $this->assertTrue($result);
     }
 

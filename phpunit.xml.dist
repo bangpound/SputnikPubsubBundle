@@ -23,6 +23,10 @@
             <exclude>
                 <directory>./Tests</directory>
                 <directory>./vendor</directory>
+                <directory>./Model</directory>
+                <directory>./Entity</directory>
+                <directory>./Document</directory>
+                <directory>./Mandango</directory>
             </exclude>
         </whitelist>
     </filter>

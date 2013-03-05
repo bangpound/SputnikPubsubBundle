@@ -2,8 +2,6 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Tests\Fixtures;
 
-use Sputnik\Bundle\PubsubBundle\Model\Topic;
-
 /**
  * @package SputnikPubsubBundle_Tests
  * @subpackage Fixtures
