@@ -1,5 +1,5 @@
 {
-    "hash": "f0828a627b737e634feca40bc32201e6",
+    "hash": "438c8a692bf8ef969064d44ecac3db0c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -22,7 +22,6 @@
             "require-dev": {
                 "doctrine/cache": "1.*"
             },
-            "time": "2013-01-12 19:23:32",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -65,7 +64,8 @@
                 "annotations",
                 "docblock",
                 "parser"
-            ]
+            ],
+            "time": "2013-01-12 19:23:32"
         },
         {
             "name": "doctrine/cache",
@@ -84,7 +84,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-10 22:43:46",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -126,7 +125,8 @@
             "keywords": [
                 "cache",
                 "caching"
-            ]
+            ],
+            "time": "2013-01-10 22:43:46"
         },
         {
             "name": "doctrine/collections",
@@ -145,7 +145,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-12 16:36:50",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -188,7 +187,8 @@
                 "array",
                 "collections",
                 "iterator"
-            ]
+            ],
+            "time": "2013-01-12 16:36:50"
         },
         {
             "name": "doctrine/common",
@@ -212,7 +212,6 @@
                 "doctrine/lexer": "1.*",
                 "php": ">=5.3.2"
             },
-            "time": "2013-02-19 09:37:33",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -262,7 +261,8 @@
                 "eventmanager",
                 "persistence",
                 "spl"
-            ]
+            ],
+            "time": "2013-02-19 09:37:33"
         },
         {
             "name": "doctrine/inflector",
@@ -281,7 +281,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-10 21:49:15",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -325,7 +324,8 @@
                 "pluarlize",
                 "singuarlize",
                 "string"
-            ]
+            ],
+            "time": "2013-01-10 21:49:15"
         },
         {
             "name": "doctrine/lexer",
@@ -344,7 +344,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-12 18:59:04",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -377,32 +376,32 @@
             "keywords": [
                 "lexer",
                 "parser"
-            ]
+            ],
+            "time": "2013-01-12 18:59:04"
         },
         {
             "name": "guzzle/common",
-            "version": "v3.1.2",
+            "version": "v3.3.1",
             "target-dir": "Guzzle/Common",
             "source": {
                 "type": "git",
-                "url": "git://github.com/guzzle/common.git",
-                "reference": "v3.1.2"
+                "url": "https://github.com/guzzle/common.git",
+                "reference": "v3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/common/archive/v3.1.2.zip",
-                "reference": "v3.1.2",
+                "url": "https://api.github.com/repos/guzzle/common/zipball/v3.3.1",
+                "reference": "v3.3.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "symfony/event-dispatcher": ">=2.1"
             },
-            "time": "2013-01-28 00:07:40",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -421,21 +420,22 @@
                 "common",
                 "event",
                 "exception"
-            ]
+            ],
+            "time": "2013-03-10 23:05:38"
         },
         {
             "name": "guzzle/http",
-            "version": "v3.1.2",
+            "version": "v3.3.1",
             "target-dir": "Guzzle/Http",
             "source": {
                 "type": "git",
-                "url": "git://github.com/guzzle/http.git",
-                "reference": "v3.1.2"
+                "url": "https://github.com/guzzle/http.git",
+                "reference": "v3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/http/archive/v3.1.2.zip",
-                "reference": "v3.1.2",
+                "url": "https://api.github.com/repos/guzzle/http/zipball/v3.3.1",
+                "reference": "v3.3.1",
                 "shasum": ""
             },
             "require": {
@@ -447,11 +447,10 @@
             "suggest": {
                 "ext-curl": "*"
             },
-            "time": "2013-01-26 08:20:43",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -478,34 +477,34 @@
                 "curl",
                 "http",
                 "http client"
-            ]
+            ],
+            "time": "2013-03-10 04:14:16"
         },
         {
             "name": "guzzle/log",
-            "version": "v3.1.2",
+            "version": "v3.3.1",
             "target-dir": "Guzzle/Log",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/log",
-                "reference": "v3.0.7"
+                "url": "https://github.com/guzzle/log.git",
+                "reference": "v3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/log/archive/v3.0.7.zip",
-                "reference": "v3.0.7",
+                "url": "https://api.github.com/repos/guzzle/log/zipball/v3.3.1",
+                "reference": "v3.3.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "suggest": {
-                "guzzle/http": "v3.1.2"
+                "guzzle/http": "v3.3.1"
             },
-            "time": "2012-12-07 16:45:11",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -530,31 +529,31 @@
                 "Guzzle",
                 "adapter",
                 "log"
-            ]
+            ],
+            "time": "2013-03-07 22:13:59"
         },
         {
             "name": "guzzle/parser",
-            "version": "v3.1.2",
+            "version": "v3.3.1",
             "target-dir": "Guzzle/Parser",
             "source": {
                 "type": "git",
-                "url": "git://github.com/guzzle/parser.git",
-                "reference": "v3.1.2"
+                "url": "https://github.com/guzzle/parser.git",
+                "reference": "v3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/parser/archive/v3.1.2.zip",
-                "reference": "v3.1.2",
+                "url": "https://api.github.com/repos/guzzle/parser/zipball/v3.3.1",
+                "reference": "v3.3.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-12 21:43:21",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -574,21 +573,22 @@
                 "http",
                 "message",
                 "url"
-            ]
+            ],
+            "time": "2013-03-07 22:13:59"
         },
         {
             "name": "guzzle/plugin-log",
-            "version": "v3.1.2",
+            "version": "v3.3.1",
             "target-dir": "Guzzle/Plugin/Log",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/plugin-log",
-                "reference": "v3.1.2"
+                "url": "https://github.com/guzzle/plugin-log.git",
+                "reference": "v3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/plugin-log/archive/v3.1.2.zip",
-                "reference": "v3.1.2",
+                "url": "https://api.github.com/repos/guzzle/plugin-log/zipball/v3.3.1",
+                "reference": "v3.3.1",
                 "shasum": ""
             },
             "require": {
@@ -596,11 +596,10 @@
                 "guzzle/log": "self.version",
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-13 05:09:32",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -625,32 +624,35 @@
                 "Guzzle",
                 "log",
                 "plugin"
-            ]
+            ],
+            "time": "2013-03-07 22:13:59"
         },
         {
             "name": "guzzle/stream",
-            "version": "v3.1.2",
+            "version": "v3.3.1",
             "target-dir": "Guzzle/Stream",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/stream",
-                "reference": "v3.0.7"
+                "url": "https://github.com/guzzle/stream.git",
+                "reference": "v3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/stream/archive/v3.0.7.zip",
-                "reference": "v3.0.7",
+                "url": "https://api.github.com/repos/guzzle/stream/zipball/v3.3.1",
+                "reference": "v3.3.1",
                 "shasum": ""
             },
             "require": {
                 "guzzle/common": "self.version",
                 "php": ">=5.3.2"
             },
-            "time": "2012-12-07 16:45:11",
+            "suggest": {
+                "guzzle/http": "To convert Guzzle request objects to PHP streams"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -675,7 +677,8 @@
                 "Guzzle",
                 "component",
                 "stream"
-            ]
+            ],
+            "time": "2013-03-10 04:14:16"
         },
         {
             "name": "psr/log",
@@ -691,7 +694,6 @@
                 "reference": "1.0.0",
                 "shasum": ""
             },
-            "time": "2012-12-21 11:40:51",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -713,46 +715,42 @@
                 "log",
                 "psr",
                 "psr-3"
-            ]
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "sputnik/common",
-            "version": "dev-master",
+            "version": "v0.2.0",
             "target-dir": "Sputnik/Common",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sputnik-project/common.git",
-                "reference": "d547012b0be18d21517130c69c5e2daf39e4062d"
+                "reference": "v0.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sputnik-project/common/zipball/d547012b0be18d21517130c69c5e2daf39e4062d",
-                "reference": "d547012b0be18d21517130c69c5e2daf39e4062d",
+                "url": "https://api.github.com/repos/sputnik-project/common/zipball/v0.2.0",
+                "reference": "v0.2.0",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "2.*",
+                "doctrine/common": ">=2.2,<3.0",
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "doctrine/orm": "2.*",
-                "mandango/mandango": "dev-master",
-                "mandango/mondator": "@dev",
-                "pagerfanta/pagerfanta": "dev-master",
-                "symfony/dependency-injection": "2.*"
+                "pagerfanta/pagerfanta": "1.0.*@dev",
+                "symfony/dependency-injection": ">=2.1,<3.0"
             },
             "suggest": {
-                "doctrine/orm": "2.*",
-                "mandango/mandango": "*",
-                "mandango/mondator": "*",
-                "pagerfanta/pagerfanta": "*",
-                "symfony/dependency-injection": "2.*"
+                "doctrine/orm": "Doctrine 2 Object Relational Mapper.",
+                "mandango/mandango": "The easy, powerful and ultrafast ODM for PHP and MongoDB.",
+                "pagerfanta/pagerfanta": "Pagination for PHP.",
+                "symfony/dependency-injection": "Robust and flexible Dependency Injection Container."
             },
-            "time": "2013-02-24 18:00:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.1.x-dev"
+                    "dev-master": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -767,13 +765,14 @@
                     "email": "lakiboy83@gmail.com"
                 }
             ],
-            "description": "Common library for Sputnik projects.",
+            "description": "Common library for Sputnik project.",
             "homepage": "http://sputnikproject.org",
             "keywords": [
                 "doctrine",
                 "manager",
                 "registry"
-            ]
+            ],
+            "time": "2013-03-16 18:21:43"
         },
         {
             "name": "symfony/config",
@@ -793,7 +792,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -820,7 +818,8 @@
                 }
             ],
             "description": "Symfony Config Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 10:42:10"
         },
         {
             "name": "symfony/dependency-injection",
@@ -848,7 +847,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-18 21:28:20",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -875,7 +873,8 @@
                 }
             ],
             "description": "Symfony DependencyInjection Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-18 21:28:20"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -902,7 +901,6 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/http-kernel": "2.2.*"
             },
-            "time": "2013-02-11 11:27:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -929,7 +927,8 @@
                 }
             ],
             "description": "Symfony EventDispatcher Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:27:01"
         },
         {
             "name": "symfony/filesystem",
@@ -949,7 +948,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 15:25:59",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -976,7 +974,8 @@
                 }
             ],
             "description": "Symfony Filesystem Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 15:25:59"
         },
         {
             "name": "symfony/framework-bundle",
@@ -1016,7 +1015,6 @@
                 "symfony/form": "2.2.*",
                 "symfony/validator": "2.2.*"
             },
-            "time": "2013-03-01 06:43:14",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1043,7 +1041,8 @@
                 }
             ],
             "description": "Symfony FrameworkBundle",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 06:43:14"
         },
         {
             "name": "symfony/http-foundation",
@@ -1063,7 +1062,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1093,7 +1091,8 @@
                 }
             ],
             "description": "Symfony HttpFoundation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 10:42:10"
         },
         {
             "name": "symfony/http-kernel",
@@ -1135,7 +1134,6 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/finder": "2.2.*"
             },
-            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1162,7 +1160,8 @@
                 }
             ],
             "description": "Symfony HttpKernel Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 10:42:10"
         },
         {
             "name": "symfony/routing",
@@ -1193,7 +1192,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-11 11:24:47",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1220,7 +1218,8 @@
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:24:47"
         },
         {
             "name": "symfony/stopwatch",
@@ -1240,7 +1239,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-04 16:58:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1267,7 +1265,8 @@
                 }
             ],
             "description": "Symfony Stopwatch Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-04 16:58:00"
         },
         {
             "name": "symfony/templating",
@@ -1287,7 +1286,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-31 21:39:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1314,7 +1312,8 @@
                 }
             ],
             "description": "Symfony Templating Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-31 21:39:01"
         },
         {
             "name": "symfony/translation",
@@ -1342,7 +1341,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-08 16:10:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1369,15 +1367,24 @@
                 }
             ],
             "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-08 16:10:57"
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.3.2"
+    },
+    "platform-dev": [
 
     ]
 }

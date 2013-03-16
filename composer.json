@@ -9,22 +9,21 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "sputnik/common": "~0.1.0",
-        "symfony/framework-bundle": "2.2.*",
-        "guzzle/http": "3.1.*",
-        "guzzle/log": "3.1.*",
-        "guzzle/plugin-log": "3.1.*"
+        "sputnik/common": "~0.2",
+        "symfony/framework-bundle": "~2.2",
+        "guzzle/http": "~3.1",
+        "guzzle/log": "~3.1",
+        "guzzle/plugin-log": "~3.1"
     },
     "suggest": {
-        "doctrine/doctrine-bundle": "~1.2",
-        "doctrine/mongodb-odm-bundle": "~3.0",
-        "mandango/mandango-bundle": "Simple, poweful and ultrafast ODM for MongoDB."
+        "doctrine/doctrine-bundle": "Required for ORM backend.",
+        "doctrine/mongodb-odm-bundle": "Required for ODM backend.",
+        "mandango/mandango-bundle": "Alternative to Doctrine - the poweful and ultrafast ODM for MongoDB."
     },
     "autoload": {
         "psr-0": { "Sputnik\\Bundle\\PubsubBundle": "" }
     },
     "target-dir": "Sputnik/Bundle/PubsubBundle",
-    "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
