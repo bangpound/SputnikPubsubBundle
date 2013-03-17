@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->booleanNode('test_hub')->defaultFalse()->end()
+                ->booleanNode('live_hub')->defaultFalse()->end()
                 ->scalarNode('route')->defaultValue('sputnik_pubsub_callback_process')->end()
                 ->scalarNode('hub_test_route')->defaultValue('sputnik_pubsub_hub_process')->end()
                 ->scalarNode('driver')

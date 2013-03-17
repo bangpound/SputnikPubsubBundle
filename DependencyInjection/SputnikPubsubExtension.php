@@ -20,7 +20,7 @@ class SputnikPubsubExtension extends Extension
         $loader->load('pubsub.xml');
         $loader->load('client.xml');
 
-        if ($config['test_hub']) {
+        if (!$config['live_hub']) {
             $container->getDefinition('sputnik_pubsub.hub.request')->replaceArgument(4, $config['hub_test_route']);
         }
 
