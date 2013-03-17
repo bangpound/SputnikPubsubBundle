@@ -88,12 +88,4 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
         $hubTestRoute = $this->container->getDefinition('sputnik_pubsub.hub.request')->getArgument(4);
         $this->assertFalse((boolean) $hubTestRoute);
     }
-
-    /**
-     * @return array
-     */
-    private function getEmptyConfig()
-    {
-        return array();
-    }
 }
