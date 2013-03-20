@@ -13,7 +13,7 @@ class AddHubSubscriberPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('sputnik_pubsub.hub.provider')) {
+        if (!$container->hasDefinition('sputnik_pubsub.hub_provider')) {
             return;
         }
 
@@ -22,6 +22,6 @@ class AddHubSubscriberPass implements CompilerPassInterface
             $hubs[] = new Reference($id);
         }
 
-        $container->getDefinition('sputnik_pubsub.hub.provider')->replaceArgument(0, $hubs);
+        $container->getDefinition('sputnik_pubsub.hub_provider')->replaceArgument(0, $hubs);
     }
 }

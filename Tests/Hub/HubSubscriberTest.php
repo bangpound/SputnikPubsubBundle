@@ -11,28 +11,18 @@ use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\SampleTopic;
 
 class HubSubscriberTest extends \PHPUnit_Framework_TestCase
 {
+    private $topicManipulator;
     private $eventDispatcher;
-    private $topicManager;
-    private $topicGenerator;
     private $hubProvider;
     private $hubRequest;
 
     public function setUp()
     {
+        $this->topicManipulator = $this->getMockBuilder('Sputnik\\Bundle\\PubsubBundle\\Manipulator\\TopicManipulator')->disableOriginalConstructor()->getMock();
         $this->eventDispatcher = $this->getMockBuilder('Symfony\\Component\\EventDispatcher\\EventDispatcherInterface')->getMock();
-        $this->topicManager = $this->getMockBuilder('Sputnik\\Bundle\\PubsubBundle\\Model\\TopicManagerInterface')->getMock();
-        $this->topicGenerator = $this->getMockBuilder('Sputnik\\Bundle\\PubsubBundle\\Generator\\TopicGeneratorInterface')->getMock();
         $this->hubRequest = $this->getMockBuilder('Sputnik\\Bundle\\PubsubBundle\\Hub\\HubRequest')->disableOriginalConstructor()->getMock();
         $this->hubProvider = new HubProvider();
         $this->hubProvider->addHub(new SampleHub());
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testSubscribeOnInvalidTopicUrlThrowsException()
-    {
-        $this->getSubscriber()->subscribe('invalid-url', 'hub-name');
     }
 
     /**
@@ -43,33 +33,20 @@ class HubSubscriberTest extends \PHPUnit_Framework_TestCase
         $this->getSubscriber()->subscribe('http://valid-url', 'unknown-hub');
     }
 
-    public function testSubscribeNewTopic()
+    public function testSubscribeSuccessful()
     {
         $subscriber = $this->getSubscriber();
         $topic = new Topic();
 
-        $this->topicManager->expects($this->once())->method('create')->will($this->returnValue($topic));
-        $this->topicManager->expects($this->once())->method('find');
-        $this->topicManager->expects($this->once())->method('persist')->with($this->identicalTo($topic));
-        $this->topicManager->expects($this->once())->method('flush');
-
-        $this->topicGenerator->expects($this->once())->method('generateTopicId')->with($this->identicalTo($topic))->will($this->returnValue('id'));
-        $this->topicGenerator->expects($this->once())->method('generateTopicSecret')->with($this->identicalTo($topic))->will($this->returnValue('secret'));
-
+        $this->topicManipulator->expects($this->once())->method('create')->will($this->returnValue($topic));
         $this->eventDispatcher
             ->expects($this->once())
             ->method('dispatch')
             ->with($this->equalTo(PubsubEvents::TOPIC_SUBSCRIBE), $this->isInstanceOf('Sputnik\\Bundle\\PubsubBundle\\Event\\TopicAwareEvent'))
         ;
-
         $this->hubRequest->expects($this->once())->method('sendRequest')->will($this->returnValue(true));
 
         $this->assertSame($topic, $subscriber->subscribe('http://topic-url', 'sample'));
-
-        $this->assertEquals('sample', $topic->getHubName());
-        $this->assertEquals('http://topic-url', $topic->getTopicUrl());
-        $this->assertEquals('id', $topic->getId());
-        $this->assertEquals('secret', $topic->getTopicSecret());
     }
 
     public function testSubscribeFailed()
@@ -77,57 +54,11 @@ class HubSubscriberTest extends \PHPUnit_Framework_TestCase
         $subscriber = $this->getSubscriber();
         $topic = new Topic();
 
-        $this->topicManager->expects($this->once())->method('create')->will($this->returnValue($topic));
-        $this->topicManager->expects($this->once())->method('find');
-        $this->topicManager->expects($this->once())->method('persist')->with($this->identicalTo($topic));
-        $this->topicManager->expects($this->once())->method('remove')->with($this->identicalTo($topic));
-        $this->topicManager->expects($this->exactly(2))->method('flush');
-
+        $this->topicManipulator->expects($this->once())->method('create')->will($this->returnValue($topic));
+        $this->topicManipulator->expects($this->once())->method('remove');
         $this->hubRequest->expects($this->once())->method('sendRequest')->will($this->returnValue(false));
 
         $this->assertFalse($subscriber->subscribe('http://topic-url', 'sample'));
-    }
-
-    public function testSubscribeToExistingTopic()
-    {
-        $subscriber = $this->getSubscriber();
-        $newTopic = new Topic();
-        $existingTopic = new SampleTopic();
-
-        $this->topicManager->expects($this->once())->method('create')->will($this->returnValue($newTopic));
-        $this->topicManager->expects($this->once())->method('find')->will($this->returnValue($existingTopic));
-        $this->topicManager->expects($this->once())->method('persist')->with($this->identicalTo($existingTopic));
-        $this->topicManager->expects($this->once())->method('flush');
-
-        $this->topicGenerator->expects($this->once())->method('generateTopicId')->with($this->identicalTo($newTopic))->will($this->returnValue('id'));
-        $this->topicGenerator->expects($this->once())->method('generateTopicSecret')->with($this->identicalTo($existingTopic))->will($this->returnValue('secret'));
-
-        $this->eventDispatcher
-            ->expects($this->once())
-            ->method('dispatch')
-            ->with($this->equalTo(PubsubEvents::TOPIC_SUBSCRIBE), $this->isInstanceOf('Sputnik\\Bundle\\PubsubBundle\\Event\\TopicAwareEvent'))
-        ;
-
-        $this->hubRequest->expects($this->once())->method('sendRequest')->will($this->returnValue(true));
-
-        $this->assertSame($existingTopic, $subscriber->subscribe('http://www.provider.com/sample-topic-url', 'sample'));
-        $this->assertEquals('secret', $existingTopic->getTopicSecret()); // Topic secret was regenerated for existing topic
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testUnsubscribeThrowsExceptionOnMissingTopic()
-    {
-        $subscriber = $this->getSubscriber();
-
-        $this->topicManager
-            ->expects($this->once())
-            ->method('findOneBy')
-            ->with($this->equalTo(array('topicUrl' => 'http://topic-url', 'hubName' => 'hub')))
-        ;
-
-        $subscriber->unsubscribe('http://topic-url', 'hub');
     }
 
     /**
@@ -135,12 +66,7 @@ class HubSubscriberTest extends \PHPUnit_Framework_TestCase
      */
     public function testUnsubscribeThrowsExceptionOnUnknownHub()
     {
-        $subscriber = $this->getSubscriber();
-        $topic = new Topic();
-
-        $this->topicManager->expects($this->once())->method('findOneBy')->will($this->returnValue($topic));
-
-        $subscriber->unsubscribe('http://topic-url', 'any-hub');
+        $this->getSubscriber()->unsubscribe('http://topic-url', 'any-hub');
     }
 
     public function testUnsubscribeSuccessful()
@@ -148,16 +74,12 @@ class HubSubscriberTest extends \PHPUnit_Framework_TestCase
         $subscriber = $this->getSubscriber();
         $topic = new SampleTopic();
 
-        $this->topicManager->expects($this->once())->method('findOneBy')->will($this->returnValue($topic));
-        $this->topicManager->expects($this->once())->method('remove')->with($this->identicalTo($topic));
-        $this->topicManager->expects($this->once())->method('flush');
-
+        $this->topicManipulator->expects($this->once())->method('remove')->will($this->returnValue($topic));
         $this->eventDispatcher
             ->expects($this->once())
             ->method('dispatch')
             ->with($this->equalTo(PubsubEvents::TOPIC_UNSUBSCRIBE), $this->isInstanceOf('Sputnik\\Bundle\\PubsubBundle\\Event\\TopicAwareEvent'))
         ;
-
         $this->hubRequest->expects($this->once())->method('sendRequest')->will($this->returnValue(true));
 
         $this->assertSame($topic, $subscriber->unsubscribe('http://topic-url', 'sample'));
@@ -168,8 +90,7 @@ class HubSubscriberTest extends \PHPUnit_Framework_TestCase
         $subscriber = $this->getSubscriber();
         $topic = new SampleTopic();
 
-        $this->topicManager->expects($this->once())->method('findOneBy')->will($this->returnValue($topic));
-
+        $this->topicManipulator->expects($this->once())->method('remove')->will($this->returnValue($topic));
         $this->hubRequest->expects($this->once())->method('sendRequest')->will($this->returnValue(false));
 
         $this->assertFalse($subscriber->unsubscribe('http://topic-url', 'sample'));
@@ -180,6 +101,6 @@ class HubSubscriberTest extends \PHPUnit_Framework_TestCase
      */
     private function getSubscriber()
     {
-        return new HubSubscriber($this->topicManager, $this->topicGenerator, $this->hubProvider, $this->hubRequest, $this->eventDispatcher);
+        return new HubSubscriber($this->topicManipulator, $this->hubProvider, $this->hubRequest, $this->eventDispatcher);
     }
 }

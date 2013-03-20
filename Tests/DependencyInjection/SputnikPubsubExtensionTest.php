@@ -30,7 +30,7 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
         $extension = new SputnikPubsubExtension();
         $extension->load(array($config), $this->container);
 
-        $this->assertTrue(in_array('sputnik_pubsub.manager.topic', $this->container->getServiceIds()));
+        $this->assertTrue(in_array('sputnik_pubsub.topic_manager', $this->container->getServiceIds()));
     }
 
     /**
@@ -43,7 +43,7 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
         $extension = new SputnikPubsubExtension();
         $extension->load(array($config), $this->container);
 
-        $this->assertTrue(in_array('sputnik_pubsub.manager.topic', $this->container->getServiceIds()));
+        $this->assertTrue(in_array('sputnik_pubsub.topic_manager', $this->container->getServiceIds()));
     }
 
     /**
@@ -74,7 +74,7 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
         $extension = new SputnikPubsubExtension();
         $extension->load(array($config), $this->container);
 
-        $hubTestRoute = $this->container->getDefinition('sputnik_pubsub.hub.request')->getArgument(4);
+        $hubTestRoute = $this->container->getDefinition('sputnik_pubsub.hub_request')->getArgument(4);
         $this->assertEquals('my-hub-route', $hubTestRoute);
     }
 
@@ -85,7 +85,7 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
         $extension = new SputnikPubsubExtension();
         $extension->load(array($config), $this->container);
 
-        $hubTestRoute = $this->container->getDefinition('sputnik_pubsub.hub.request')->getArgument(4);
+        $hubTestRoute = $this->container->getDefinition('sputnik_pubsub.hub_request')->getArgument(4);
         $this->assertFalse((boolean) $hubTestRoute);
     }
 }

@@ -32,7 +32,7 @@ class PushCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $manager = $this->getContainer()->get('sputnik_pubsub.manager.topic');
+        $manager = $this->getContainer()->get('sputnik_pubsub.topic_manager');
         $topic = $manager->findOneBy(array('topicUrl' => $input->getArgument('topic'), 'hubName' => $input->getArgument('hub')));
         if ($topic === null) {
             return $output->writeln('<error>Topic not found.</error>');

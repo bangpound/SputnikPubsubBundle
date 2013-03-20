@@ -4,9 +4,10 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="sputnik_pubsub.hub.provider.class">Sputnik\Bundle\PubsubBundle\Hub\HubProvider</parameter>
-        <parameter key="sputnik_pubsub.hub.subscriber.class">Sputnik\Bundle\PubsubBundle\Hub\HubSubscriber</parameter>
-        <parameter key="sputnik_pubsub.hub.request.class">Sputnik\Bundle\PubsubBundle\Hub\HubRequest</parameter>
+        <parameter key="sputnik_pubsub.topic_manipulator.class">Sputnik\Bundle\PubsubBundle\Manipulator\TopicManipulator</parameter>
+        <parameter key="sputnik_pubsub.hub_provider.class">Sputnik\Bundle\PubsubBundle\Hub\HubProvider</parameter>
+        <parameter key="sputnik_pubsub.hub_subscriber.class">Sputnik\Bundle\PubsubBundle\Hub\HubSubscriber</parameter>
+        <parameter key="sputnik_pubsub.hub_request.class">Sputnik\Bundle\PubsubBundle\Hub\HubRequest</parameter>
         <parameter key="sputnik_pubsub.controller.callback.class">Sputnik\Bundle\PubsubBundle\Controller\CallbackController</parameter>
         <parameter key="sputnik_pubsub.controller.hub.class">Sputnik\Bundle\PubsubBundle\Controller\HubController</parameter>
         <parameter key="sputnik_pubsub.notification_handler.class">Sputnik\Bundle\PubsubBundle\Handler\EventNotificationHandler</parameter>
@@ -16,19 +17,23 @@
     </parameters>
 
     <services>
-        <service id="sputnik_pubsub.hub.provider" class="%sputnik_pubsub.hub.provider.class%">
+        <service id="sputnik_pubsub.topic_manipulator" class="%sputnik_pubsub.topic_manipulator.class%">
+            <argument type="service" id="sputnik_pubsub.topic_manager" />
+            <argument type="service" id="sputnik_pubsub.generator" />
+        </service>
+
+        <service id="sputnik_pubsub.hub_provider" class="%sputnik_pubsub.hub_provider.class%">
             <argument type="collection" />
         </service>
 
-        <service id="sputnik_pubsub.hub.subscriber" class="%sputnik_pubsub.hub.subscriber.class%">
-            <argument type="service" id="sputnik_pubsub.manager.topic" />
-            <argument type="service" id="sputnik_pubsub.generator" />
-            <argument type="service" id="sputnik_pubsub.hub.provider" />
-            <argument type="service" id="sputnik_pubsub.hub.request" />
+        <service id="sputnik_pubsub.hub_subscriber" class="%sputnik_pubsub.hub_subscriber.class%">
+            <argument type="service" id="sputnik_pubsub.topic_manipulator" />
+            <argument type="service" id="sputnik_pubsub.hub_provider" />
+            <argument type="service" id="sputnik_pubsub.hub_request" />
             <argument type="service" id="sputnik_pubsub.event_dispatcher" />
         </service>
 
-        <service id="sputnik_pubsub.hub.request" class="%sputnik_pubsub.hub.request.class%" public="false">
+        <service id="sputnik_pubsub.hub_request" class="%sputnik_pubsub.hub_request.class%" public="false">
             <argument type="service" id="router" />
             <argument>%sputnik_pubsub.route%</argument>
             <argument type="service" id="sputnik_pubsub.http_client" />
@@ -38,7 +43,7 @@
         </service>
 
         <service id="sputnik_pubsub.controller.callback" class="%sputnik_pubsub.controller.callback.class%">
-            <argument type="service" id="sputnik_pubsub.manager.topic" />
+            <argument type="service" id="sputnik_pubsub.topic_manager" />
             <argument type="service" id="logger" />
             <argument type="service" id="sputnik_pubsub.notification_handler" />
             <tag name="monolog.logger" channel="pubsub" />

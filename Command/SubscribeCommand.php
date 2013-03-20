@@ -32,7 +32,7 @@ class SubscribeCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $subscriber = $this->getContainer()->get('sputnik_pubsub.hub.subscriber');
+        $subscriber = $this->getContainer()->get('sputnik_pubsub.hub_subscriber');
 
         $context = $this->getContainer()->get('router')->getContext();
         if ($host = $input->getOption('context-host')) {

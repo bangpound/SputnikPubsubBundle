@@ -21,7 +21,7 @@ class ListHubsCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $provider = $this->getContainer()->get('sputnik_pubsub.hub.provider');
+        $provider = $this->getContainer()->get('sputnik_pubsub.hub_provider');
         foreach ($provider->getHubs() as $hub) {
             $output->writeln(sprintf('%s - %s', $hub->getName(), $hub->getUrl()));
         }
