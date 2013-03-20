@@ -7,7 +7,6 @@ abstract class Topic implements TopicInterface
     protected $id;
     protected $topicUrl;
     protected $topicSecret;
-    protected $verified;
     protected $createdAt;
     protected $updatedAt;
     protected $hubName;
@@ -15,7 +14,6 @@ abstract class Topic implements TopicInterface
     public function __construct()
     {
         $this->createdAt = $this->updatedAt = new \DateTime;
-        $this->verified = false;
     }
 
     /**
@@ -64,22 +62,6 @@ abstract class Topic implements TopicInterface
     public function setTopicSecret($secret)
     {
         $this->topicSecret = $secret;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isVerified()
-    {
-        return $this->verified;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setVerified($flag)
-    {
-        $this->verified = $flag;
     }
 
     /**

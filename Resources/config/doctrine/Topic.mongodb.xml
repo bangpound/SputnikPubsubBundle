@@ -8,7 +8,6 @@
         <field name="topic_url" fieldName="topicUrl" type="string" />
         <field name="topic_secret" fieldName="topicSecret" type="string" />
         <field name="hub_name" fieldName="hubName" type="string" />
-        <field name="is_verified" fieldName="verified" type="boolean" />
         <field name="date_created" fieldName="createdAt" type="date" />
         <field name="date_updated" fieldName="updatedAt" type="date" />
 

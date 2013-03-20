@@ -8,17 +8,8 @@ abstract class Topic extends \Model\SputnikPubsubBundle\Base\Topic implements To
 {
     public function initializeDefaults()
     {
-        $this->setVerified(false);
         $this->setCreatedAt(new \DateTime);
         $this->setUpdatedAt(new \DateTime);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isVerified()
-    {
-        return $this->getVerified() ? true : false;
     }
 
     /**

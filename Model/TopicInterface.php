@@ -35,16 +35,6 @@ interface TopicInterface
     public function setTopicSecret($secret);
 
     /**
-     * @return boolean
-     */
-    public function isVerified();
-
-    /**
-     * @param boolean $flag
-    */
-    public function setVerified($flag);
-
-    /**
      * @return \DateTime
      */
     public function getCreatedAt();

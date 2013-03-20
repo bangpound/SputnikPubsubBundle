@@ -15,7 +15,6 @@
         <field name="topicUrl" column="topic_url" />
         <field name="topicSecret" column="topic_secret" />
         <field name="hubName" column="hub_name" />
-        <field name="verified" column="is_verified" type="boolean" />
         <field name="createdAt" column="date_created" type="datetime" />
         <field name="updatedAt" column="date_updated" type="datetime" />
 
