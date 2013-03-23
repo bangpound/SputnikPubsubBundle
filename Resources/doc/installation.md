@@ -102,7 +102,7 @@ Power users can always figure out how to extend such entities. However, this mig
 
 #### Doctrine ORM
 
-This the defaut option. You need to have `doctrine/doctrine-bundle` registered. 
+This is the defaut option. You need to have `doctrine/doctrine-bundle` registered. 
 
 To create database schema, please, run:
 
