@@ -31,7 +31,7 @@ $ php app/console sputnik:pubsub:list-hubs
 blogger - http://pubsubhubbub.appspot.com
 etsy - https://hub.etsy.com
 ```
-    
+
 ## Hub attributes
 
 Each hub has:
@@ -76,7 +76,7 @@ To unsubscribe, please, run:
 $ php app/console sputnik:pubsub:subscribe -u http://my-topic-url blogger
 Subscription removed: 829e61439c6e9acf8438f93b040f0da4f0647ec4
 ```
-    
+
 As noted in [installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/installation.md),
 in "console mode" the router does not know much about current host, protocol or base URL. Please, refer to installation
 to find out how to specify default host, protocol or base URL for router in CLI.
@@ -111,5 +111,7 @@ of errors it is quite helpful to tail the logs and see what's going on:
 ```bash
 $ tail -f app/logs/pubsub.dev.log
 ```
-    
-    
+
+## Next
+
+Reed next [how to handle notifications](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/handling-notifications.md).
