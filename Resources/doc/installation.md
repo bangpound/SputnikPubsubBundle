@@ -112,6 +112,21 @@ Configuration needs to be updated to enable this driver:
     sputnik_pubsub:
         driver: doctrine_mongo
         
-This option assumes `doctrine/mongodb-odm-bundle` is installed and default database configured.
+This driver assumes `doctrine/mongodb-odm-bundle` is installed and default database configured.
+
+#### Mandango
+
+Update config to:
+
+    sputnik_pubsub:
+        driver: mandango
+        
+This driver assumes `mandango/mandango-bundle` bundle is installed.
+
+To create Mandango models, please, run:
+
+    php app/console mandango:generate
+    
+More information about Mandango can be found at official website - http://mandango.org.
 
 
