@@ -7,7 +7,7 @@ and was used as a foundation for current Sputnik version.
 
  - Support for multiple storage drivers: Doctrine ORM, Doctrine ODM and [Mandango](http://mandango.org).
  - Ability to define and subscribe to different hubs.
- - Set of CLI commands to manage subscriptions.
+ - Set of console commands to manage and test subscriptions.
  - Implementation of really simple test hub i.e. you don't need to send requests to real hubs when developing.
  - Extensive logging (via separate _pubsub_ channel).
  
