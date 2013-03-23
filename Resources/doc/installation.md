@@ -93,7 +93,7 @@ To setup storage driver, please, use `sputnik_pubsub.driver` configuration optio
         driver: doctrine_mongo # allowed values: doctrine (default), doctrine_mongo, mandango
         
 __Note:__ Unlike most distributed Symfony bundles, SputnikPubsubBundle provides a complete Entities/Documents for you.
-That means you don't have to register your own models/entities. This approach is used to simplify installation process.
+That means you don't have to register/extend your own models/entities. This approach is used to simplify installation process.
 Power users can always figure out how to extend such entities. However, this might be a subject of change in future versions.
 
 #### Doctrine ORM
@@ -105,4 +105,13 @@ To create database schema, please, run:
     php app/console doctrine:schema:update --dump-sql # review SQL change set
     php app/console doctrine:schema:update --force
     
-    
+#### Doctrine Mongo ODM
+
+Configuration needs to be updated to enable this driver:
+
+    sputnik_pubsub:
+        driver: doctrine_mongo
+        
+This option assumes `doctrine/mongodb-odm-bundle` is installed and default database configured.
+
+
