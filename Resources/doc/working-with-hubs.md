@@ -26,7 +26,7 @@ services:
 Above will register two hubs with names _blogger_ and _etsy_ within [HubProvider](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Hub/HubProviderInterface.php).
 You can output the list of hubs known to hub provider by running `php app/console sputnik:pubsub:list-hubs`, e.g.:
 
-```yaml
+```bash
 $ php app/console sputnik:pubsub:list-hubs
 blogger - http://pubsubhubbub.appspot.com
 etsy - https://hub.etsy.com
