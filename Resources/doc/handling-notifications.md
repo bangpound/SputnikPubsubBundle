@@ -87,7 +87,7 @@ In that way you can "emulate" hub notification for topic updates and test your l
 ## Debug
 
 There is a [LogListener](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/EventListener/LogListener.php)
-implemented. It logs notification information. This is handy if you want to review what kind of notification arrive from hub.
+implemented, which logs notification information. This is handy if you want to review what kind of notification arrive from hub.
 
 ## Next
 
