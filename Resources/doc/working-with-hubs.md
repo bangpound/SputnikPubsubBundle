@@ -114,4 +114,4 @@ $ tail -f app/logs/pubsub.dev.log
 
 ## Next
 
-Reed next [how to handle notifications](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/handling-notifications.md).
+Read next [how to handle notifications](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/handling-notifications.md).
