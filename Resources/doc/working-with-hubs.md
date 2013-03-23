@@ -1,7 +1,8 @@
 # Working with hubs
 
 Hubs are instances of [HubInterface](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Hub/HubInterface.php).
-The simpliest way to create a hub is to reuse standard implementation.
+The simpliest way to create a hub is to reuse [standard implementation](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Hub/Hub.php),
+which is a simple value object.
 
 ## Registering a new hub
 
@@ -29,14 +30,53 @@ You can output the list of hubs known to hub provider by running `php app/consol
     blogger - http://pubsubhubbub.appspot.com
     etsy - https://hub.etsy.com
     
-## Hub parameters
-
-[Default hub implementation](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Hub/Hub.php) is simple value object.
+## Hub attributes
 
 Each hub has:
  - a unique name (e.g. _etsy_, _blogger_, _instagram_),
  - hub URL,
  - hub parameters.
 
-Parameters allow to pass additional fields to hub subscibe/unsubscibe requests. In case of _etsy_ hub for instance,
+Parameters allow to pass additional fields to hub subscibe/unsubscibe requests. In case of e.g. _etsy_ hub,
 you need to specify the api key given by Etsy.
+
+## While in development
+
+Obviously, while in development you don't want to send subscribe/unsubscribe requests to real hubs. Hubs will try
+to ping your server back to approve your request (this bundle does not support asynchronious subscriptions).
+To mitigate this problem there is a config option called `sputnik_pubsub.live_hub`, which is
+set to _false_ by default. What that means that (un)subscribe requests will be routed to a test (local) hub instead.
+
+In order to ping live hubs you need to explicitly allow this:
+
+    sputnik_pubsub:
+        live_hub: true
+
+Test hub will most likely confirm your request returning 204 HTTP code.
+
+## Subscribe/unsubscibe
+
+Let's try to subscribe to _blogger_ hub in develpoment mode via console:
+
+    mbp:sandbox lakiboy$ php app/console sputnik:pubsub:subscribe http://my-topic-url blogger
+    Subscription created: 829e61439c6e9acf8438f93b040f0da4f0647ec4
+
+Above created new _blogger_ subscription for topic URL `http://my-topic-url`. Obviously such topic URL does not exist
+on real hub, but we are in development mode, hence subscription was successfully confirmed by test hub.
+
+To unsubscribe, please, run:
+
+    mbp:sandbox lakiboy$ php app/console sputnik:pubsub:subscribe -u http://my-topic-url blogger
+    Subscription removed: 829e61439c6e9acf8438f93b040f0da4f0647ec4
+    
+As noted in [installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/installation.md),
+in "console mode" the router does not know much about current host, protocol or base URL. Please, refer to installation
+to find out how to specify default host, protocol or base URL for router in CLI.
+
+You can also supply router context adding relevant options:
+
+    php app/console sputnik:pubsub:subscribe http://my-another-topic-url blogger \
+        --context-host=sputnik \
+        --context-scheme=https \
+        --context-base-url=/app_dev.php
+
