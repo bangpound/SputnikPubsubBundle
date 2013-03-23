@@ -58,16 +58,20 @@ Test hub will most likely confirm your request returning 204 HTTP code.
 
 Let's try to subscribe to _blogger_ hub in develpoment mode via console:
 
-    mbp:sandbox lakiboy$ php app/console sputnik:pubsub:subscribe http://my-topic-url blogger
-    Subscription created: 829e61439c6e9acf8438f93b040f0da4f0647ec4
+```bash
+$ php app/console sputnik:pubsub:subscribe http://my-topic-url blogger
+Subscription created: 829e61439c6e9acf8438f93b040f0da4f0647ec4
+```
 
 Above created new _blogger_ subscription for topic URL `http://my-topic-url`. Obviously such topic URL does not exist
 on real hub, but we are in development mode, hence subscription was successfully confirmed by test hub.
 
 To unsubscribe, please, run:
 
-    mbp:sandbox lakiboy$ php app/console sputnik:pubsub:subscribe -u http://my-topic-url blogger
-    Subscription removed: 829e61439c6e9acf8438f93b040f0da4f0647ec4
+```bash
+$ php app/console sputnik:pubsub:subscribe -u http://my-topic-url blogger
+Subscription removed: 829e61439c6e9acf8438f93b040f0da4f0647ec4
+```
     
 As noted in [installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/installation.md),
 in "console mode" the router does not know much about current host, protocol or base URL. Please, refer to installation
@@ -75,10 +79,12 @@ to find out how to specify default host, protocol or base URL for router in CLI.
 
 You can also supply router context adding relevant options:
 
-    php app/console sputnik:pubsub:subscribe http://my-another-topic-url blogger \
-        --context-host=sputnik \
-        --context-scheme=https \
-        --context-base-url=/app_dev.php
+```bash
+ $ php app/console sputnik:pubsub:subscribe http://my-another-topic-url blogger \
+       --context-host=sputnik \
+       --context-scheme=https \
+       --context-base-url=/app_dev.php
+```
 
 #### Using a service
 
