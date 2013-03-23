@@ -45,7 +45,7 @@ You can add any prefixes you like, you can always check the end result with `php
 
 ## Registering of _pubsub_ logging channel
 
-In _config_dev.yml_ and/or in _config_prod.yml add below:
+In _config_dev.yml_ and/or in _config_prod.yml_ add below:
 
 ```yaml
 monolog:
