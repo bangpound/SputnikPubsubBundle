@@ -10,9 +10,9 @@ and was used as a foundation for current Sputnik version.
  - Set of console commands to manage and test subscriptions.
  - Implementation of really simple test hub i.e. you don't need to send requests to real hubs when developing.
  - Extensive logging (via separate _pubsub_ channel).
- 
+
 #### Notes
- 
+
  - This bundle requires Symfony 2.2 to operate, but could be easily adopted to work with Symfony 2.1. Patches welcome!
  - At the moment SputnikPubsubBundle supports synchronous subscriptions only.
 
@@ -20,8 +20,8 @@ and was used as a foundation for current Sputnik version.
 
 ## Documentation
 
-Documentation can be found in `Resources/doc`. You can start with 
-[installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/01-installation.md).
+Documentation can be found in `Resources/doc`. You can start with
+[installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/installation.md).
 
 ## Resources
 
