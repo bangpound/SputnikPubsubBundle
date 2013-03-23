@@ -108,6 +108,8 @@ The result is the [TopicInterface](https://github.com/sputnik-project/SputnikPub
 SputnikPubsubBundle tries to log all possible information related to hub/topic requests, responses, etc. In search
 of errors it is quite helpful to tail the logs and see what's going on:
 
-    tail -f app/logs/pubsub.dev.log
+```bash
+$ tail -f app/logs/pubsub.dev.log
+```
     
     
