@@ -8,7 +8,7 @@ The installation consist of 3 steps:
 
 ## Bundle setup
 
-The part is straight forward and is absolutely the same as for any other Symfony bundle.
+This part is straight forward and is absolutely the same as for any other Symfony bundle.
 
 #### Add relevant require statement to composer.json, e.g.
 
