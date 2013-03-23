@@ -1,9 +1,10 @@
 # Installation
 
-The installation consist of 3 steps:
+The installation consist of 4 steps:
 
  - bundle setup,
  - registering of _pubsub_ logging channel,
+ - defining route context for console commands (optional),
  - storage driver setup and schema creation.
 
 ## Bundle setup
@@ -65,3 +66,22 @@ monolog:
 Above ensures you have the _pubsub_ logging channel setup. All logging done by SputnkPubsubBudle uses that channel,
 therefore it must be registered. Also note the exclusion of _pubsub_ channel from _main_. This is optional and prevents
 _pubsub_ messages to go into the main stream.
+
+## Defining route context (optional)
+
+This bundle provides a set of console commands to deal with subscriptions. In "console mode" Symfony knows nothing about
+your host, protocol or base URL when generating the routes with router.
+
+As of Symfony 2.2 there are 3 parameters you can define to mitigate this:
+
+ - router.request_context.host
+ - router.request_context.scheme
+ - router.request_context.base_url
+
+To set host name to _foo_ for all console generated URLs, you can add the following to the _parameters.yml_:
+
+    router.request_context.host: foo
+   
+Now URLs generated in console will have this hostname defined. Please, read the following cookbook entry
+for more information - http://symfony.com/doc/current/cookbook/console/sending_emails.html
+
