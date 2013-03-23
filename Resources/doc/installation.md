@@ -129,4 +129,6 @@ To create Mandango models, please, run:
     
 More information about Mandango can be found at official website - http://mandango.org.
 
+## Next
 
+Reed next [how to setup your first hub](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/working-with-hubs.md).
