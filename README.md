@@ -23,6 +23,8 @@ and was used as a foundation for current Sputnik version.
 Documentation can be found in `Resources/doc`. You can start with
 [installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/installation.md).
 
+There is a sample _Sandbox_ application with Sputnik bundles installed and configured - https://github.com/sputnik-project/sandbox.
+
 ## Resources
 
  - https://github.com/hearsayit/PubSubHubbubBundle
