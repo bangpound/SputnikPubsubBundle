@@ -80,3 +80,18 @@ You can also supply router context adding relevant options:
         --context-scheme=https \
         --context-base-url=/app_dev.php
 
+#### Using a service
+
+You can use `sputnik_pubsub.hub_subscriber` to (un)subcribe within your code, e.g.:
+
+```php
+// subscribe
+$topic = $this->get('sputnik_pubsub.hub_subscriber')->subscribe('http://my-topic-url', 'blogger');
+// unsubscribe
+$topic = $this->get('sputnik_pubsub.hub_subscriber')->unsubscribe('http://my-topic-url', 'blogger');
+```
+
+The result is the [TopicInterface](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Model/TopicInterface.php) instance.
+
+
+
