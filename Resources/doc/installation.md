@@ -102,8 +102,10 @@ This the defaut option. You need to have `doctrine/doctrine-bundle` registered.
 
 To create database schema, please, run:
 
-    php app/console doctrine:schema:update --dump-sql # review SQL change set
-    php app/console doctrine:schema:update --force
+```bash
+$ php app/console doctrine:schema:update --dump-sql # review SQL change set
+$ php app/console doctrine:schema:update --force
+```
     
 #### Doctrine Mongo ODM
 
