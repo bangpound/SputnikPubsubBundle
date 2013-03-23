@@ -80,7 +80,9 @@ As of Symfony 2.2 there are 3 parameters you can define to mitigate this:
 
 To set host name to _foo_ for all console generated URLs, you can add the following to the _parameters.yml_:
 
-    router.request_context.host: foo
+```yaml
+router.request_context.host: foo
+```
    
 Now URLs generated in console will have this hostname defined. Please, read the following cookbook entry
 for more information - http://symfony.com/doc/current/cookbook/console/sending_emails.html
@@ -89,8 +91,10 @@ for more information - http://symfony.com/doc/current/cookbook/console/sending_e
 
 To setup storage driver, please, use `sputnik_pubsub.driver` configuration option, e.g.
 
-    sputnik_pubsub:
-        driver: doctrine_mongo # allowed values: doctrine (default), doctrine_mongo, mandango
+```yaml
+sputnik_pubsub:
+    driver: doctrine_mongo # allowed values: doctrine (default), doctrine_mongo, mandango
+```
         
 __Note:__ Unlike most distributed Symfony bundles, SputnikPubsubBundle provides a complete Entities/Documents for you.
 That means you don't have to register/extend your own models/entities. This approach is used to simplify installation process.
@@ -111,8 +115,10 @@ $ php app/console doctrine:schema:update --force
 
 Configuration needs to be updated to enable this driver:
 
-    sputnik_pubsub:
-        driver: doctrine_mongo
+```yaml
+sputnik_pubsub:
+    driver: doctrine_mongo
+```
         
 This driver assumes `doctrine/mongodb-odm-bundle` is installed and default database configured.
 
@@ -120,14 +126,18 @@ This driver assumes `doctrine/mongodb-odm-bundle` is installed and default datab
 
 Update config to:
 
-    sputnik_pubsub:
-        driver: mandango
+```yaml
+sputnik_pubsub:
+    driver: mandango
+```
         
 This driver assumes `mandango/mandango-bundle` bundle is installed.
 
 To create Mandango models, please, run:
 
-    php app/console mandango:generate
+```bash
+$ php app/console mandango:generate
+```
     
 More information about Mandango can be found at official website - http://mandango.org.
 
