@@ -85,3 +85,24 @@ To set host name to _foo_ for all console generated URLs, you can add the follow
 Now URLs generated in console will have this hostname defined. Please, read the following cookbook entry
 for more information - http://symfony.com/doc/current/cookbook/console/sending_emails.html
 
+## Storage driver setup
+
+To setup storage driver, please, use `sputnik_pubsub.driver` configuration option, e.g.
+
+    sputnik_pubsub:
+        driver: doctrine_mongo # allowed values: doctrine (default), doctrine_mongo, mandango
+        
+__Note:__ Unlike most distributed Symfony bundles, SputnikPubsubBundle provides a complete Entities/Documents for you.
+That means you don't have to register your own models/entities. This approach is used to simplify installation process.
+Power users can always figure out how to extend such entities. However, this might be a subject of change in future versions.
+
+#### Doctrine ORM
+
+This the defaut option. You need to have `doctrine/doctrine-bundle` registered. 
+
+To create database schema, please, run:
+
+    php app/console doctrine:schema:update --dump-sql # review SQL change set
+    php app/console doctrine:schema:update --force
+    
+    
