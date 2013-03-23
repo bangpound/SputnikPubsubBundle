@@ -93,5 +93,11 @@ $topic = $this->get('sputnik_pubsub.hub_subscriber')->unsubscribe('http://my-top
 
 The result is the [TopicInterface](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Model/TopicInterface.php) instance.
 
+## Debug
 
+SputnikPubsubBundle tries to log all possible information related to hub/topic requests, responses, etc. In search
+of errors it is quite helpful to tail the logs and see what's going on:
 
+    tail -f app/logs/pubsub.dev.log
+    
+    
