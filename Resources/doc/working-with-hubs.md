@@ -26,9 +26,11 @@ services:
 Above will register two hubs with names _blogger_ and _etsy_ within [HubProvider](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Hub/HubProviderInterface.php).
 You can output the list of hubs known to hub provider by running `php app/console sputnik:pubsub:list-hubs`, e.g.:
 
-    mbp:sandbox lakiboy$ php app/console sputnik:pubsub:list-hubs
-    blogger - http://pubsubhubbub.appspot.com
-    etsy - https://hub.etsy.com
+```yaml
+$ php app/console sputnik:pubsub:list-hubs
+blogger - http://pubsubhubbub.appspot.com
+etsy - https://hub.etsy.com
+```
     
 ## Hub attributes
 
@@ -49,8 +51,10 @@ set to _false_ by default. What that means that (un)subscribe requests will be r
 
 In order to ping live hubs you need to explicitly allow this:
 
-    sputnik_pubsub:
-        live_hub: true
+```yaml
+sputnik_pubsub:
+    live_hub: true
+```
 
 Test hub will most likely confirm your request returning 204 HTTP code.
 
@@ -80,10 +84,10 @@ to find out how to specify default host, protocol or base URL for router in CLI.
 You can also supply router context adding relevant options:
 
 ```bash
- $ php app/console sputnik:pubsub:subscribe http://my-another-topic-url blogger \
-       --context-host=sputnik \
-       --context-scheme=https \
-       --context-base-url=/app_dev.php
+$ php app/console sputnik:pubsub:subscribe http://my-another-topic-url blogger \
+    --context-host=sputnik \
+    --context-scheme=https \
+    --context-base-url=/app_dev.php
 ```
 
 #### Using a service
