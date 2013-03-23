@@ -1,7 +1,7 @@
 # Handling notifications
 
-The whole point of _PubSubHubbub_ protocol is to get notified by hub, when certain topic was updated. Whenever a publisher
-updates certain topic (e.g. writes a blogpost), the hub pushes the update to all subscribers.
+The whole point of _PubSubHubbub_ protocol is to get notified by hub, when certain topic was updated. Whenever publisher
+updates a topic (e.g. writes a blogpost), the hub pushes the update to all subscribers.
 
 ## Callback URL
 
@@ -88,3 +88,7 @@ In that way you can "emulate" hub notification for topic updates and test your l
 
 There is a [LogListener](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/EventListener/LogListener.php)
 implemented. It logs notification information. This is handy if you want to review what kind of notification arrive from hub.
+
+## Next
+
+Review [configuration reference](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/configuration-reference.md).
