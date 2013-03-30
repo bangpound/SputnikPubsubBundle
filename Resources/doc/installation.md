@@ -1,6 +1,6 @@
 # Installation
 
-The installation consist of 4 steps:
+The installation includes 4 steps:
 
  - bundle setup,
  - registering of _pubsub_ logging channel,
@@ -9,7 +9,7 @@ The installation consist of 4 steps:
 
 ## Bundle setup
 
-This part is straight forward and is absolutely the same as for any other Symfony bundle.
+This part is straight forward and is the same as for any other Symfony bundle.
 
 #### Add relevant require statement to composer.json, e.g.
 
