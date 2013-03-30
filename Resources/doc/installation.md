@@ -13,7 +13,9 @@ This part is straight forward and is the same as for any other Symfony bundle.
 
 #### Add relevant require statement to composer.json, e.g.
 
-    "sputnik/pubsub-bundle": "~0.1"
+```json
+"sputnik/pubsub-bundle": "~0.1"
+```
     
 #### Register bundle in the kernel:
 
