@@ -24,6 +24,8 @@ and was used as a foundation for current Sputnik version.
 Documentation can be found in `Resources/doc`. You can start with
 [installation instructions](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/installation.md).
 
+[API documentation](http://api.sputnik-project.org).
+
 ## Resources
 
  - https://github.com/hearsayit/PubSubHubbubBundle
