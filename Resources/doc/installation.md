@@ -145,4 +145,4 @@ More information about Mandango can be found at official website - http://mandan
 
 ## Next
 
-Reed next [how to setup your first hub](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/working-with-hubs.md).
+Read next [how to setup your first hub](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/Resources/doc/working-with-hubs.md).
