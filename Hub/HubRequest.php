@@ -37,6 +37,8 @@ class HubRequest
      * @param TopicInterface $topic
      * @param HubInterface   $hub
      *
+     * @throws \Exception|\Guzzle\Http\Exception\ClientErrorResponseException
+     *
      * @return boolean
      */
     public function sendRequest($mode, TopicInterface $topic, HubInterface $hub)
@@ -56,8 +58,13 @@ class HubRequest
             $hubUrl = $hub->getUrl();
         }
 
+        $request = $this->httpClient->post($hubUrl);
+        if ($hub instanceof SuperfeedrHub) {
+            $request->setAuth($hub->getUsername(), $hub->getPassword());
+        }
+
         try {
-            $response = $this->httpClient->post($hubUrl)->addPostFields($params)->send();
+            $response = $request->addPostFields($params)->send();
         } catch (ClientErrorResponseException $e) {
             if ($this->hubTestRoute) {
                 throw $e;

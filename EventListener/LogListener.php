@@ -28,7 +28,7 @@ class LogListener implements EventSubscriberInterface
     }
 
     /**
-     * @param NotificationRecievedEvent $event
+     * @param NotificationReceivedEvent $event
      */
     public function onNotificationReceived(NotificationReceivedEvent $event)
     {
