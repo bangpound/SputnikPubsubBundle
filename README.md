@@ -15,7 +15,7 @@ and was used as a foundation for current Sputnik version.
 
  - This bundle requires Symfony 2.2 to operate, but could be easily adopted to work with Symfony 2.1. Patches welcome!
  - At the moment SputnikPubsubBundle supports synchronous subscriptions only.
- - There is a sample _Sandbox_ application with Sputnik bundles installed and configured - https://github.com/sputnik-project/sandbox.
+ - There is a sample _Sandbox_ application with Sputnik bundles installed and configured - https://github.com/sputnik-project/sandbox/tree/pubsub.
 
 [![Build Status](https://api.travis-ci.org/sputnik-project/SputnikPubsubBundle.png?branch=master)](https://travis-ci.org/sputnik-project/SputnikPubsubBundle)
 
