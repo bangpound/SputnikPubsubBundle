@@ -15,7 +15,7 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->generator = $this->getMockBuilder('Symfony\\Component\\Routing\\Generator\\UrlGeneratorInterface')->getMock();
-        $this->httpClient = $this->getMockBuilder('Guzzle\\Http\\Client')->setMethods(array('post', 'addPostFields'))->getMock();
+        $this->httpClient = $this->getMockBuilder('Guzzle\\Http\\Client')->setMethods(array('post', 'addPostFields', 'setAuth'))->getMock();
     }
 
     public function getHubSubscriptionModes()
@@ -102,6 +102,12 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo($params))
             ->will($this->returnValue($request))
         ;
+        $this->httpClient
+            ->expects($this->once())
+            ->method('setAuth')
+            ->with($this->equalTo('username'), $this->equalTo('password'))
+        ;
+
         $request
             ->expects($this->once())
             ->method('send')
