@@ -44,7 +44,7 @@ class CallbackController
             if ($result->isEmpty() && $mode === HubSubscriberInterface::SUBSCRIBE) {
                 $this->logger->warning(sprintf('pubsub callback: illegal %s request for topic %s', $mode, $id));
             } else {
-                $this->logger->info(sprintf('pubsub callback: %s request for topic %s [%s]', $mode, $id, ($result->isEmpty() ? $result->get() : 'deleted')));
+                $this->logger->info(sprintf('pubsub callback: %s request for topic %s [%s]', $mode, $id, (!$result->isEmpty() ? $result->get() : 'deleted')));
                 $message = $request->query->get('hub_challenge');
             }
 
