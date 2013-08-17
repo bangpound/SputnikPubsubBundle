@@ -32,10 +32,14 @@ class PushCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        /* @var $manager \Sputnik\Bundle\PubsubBundle\Model\TopicManager */
         $manager = $this->getContainer()->get('sputnik_pubsub.topic_manager');
-        $topic = $manager->findOneBy(array('topicUrl' => $input->getArgument('topic'), 'hubName' => $input->getArgument('hub')));
-        if ($topic === null) {
+        $result = $manager->findTopicBy(array('topicUrl' => $input->getArgument('topic'), 'hubName' => $input->getArgument('hub')));
+        if ($result->isEmpty()) {
             return $output->writeln('<error>Topic not found.</error>');
+        } else {
+            /* @var $topic \Sputnik\Bundle\PubsubBundle\Model\TopicInterface */
+            $topic = $result->get();
         }
 
         $filepath = $input->getArgument('file');
@@ -43,6 +47,7 @@ class PushCommand extends ContainerAwareCommand
             return $output->writeln('<error>File not found.</error>');
         }
 
+        /* @var $context \Symfony\Component\Routing\RequestContext */
         $context = $this->getContainer()->get('router')->getContext();
         if ($host = $input->getOption('context-host')) {
             $context->setHost($host);
@@ -63,6 +68,7 @@ class PushCommand extends ContainerAwareCommand
         $signature = hash_hmac('sha1', $body, $topic->getTopicSecret());
 
         $client = $this->getContainer()->get('sputnik_pubsub.http_client');
+        /* @var $response \Guzzle\Http\Message\Response */
         $response = $client->post($callback, array('X-Hub-Signature' => 'sha1=' . $signature), $body)->send();
         if ($response->getStatusCode() !== 200) {
             $output->writeln(sprintf('<error>HTTP code returned: %d</error>', $response->getStatusCode()));

@@ -28,8 +28,6 @@ class SputnikPubsubExtension extends Extension
             $loader->load('orm.xml');
         } elseif ($config['driver'] === 'doctrine_mongo') {
             $loader->load('odm.xml');
-        } elseif ($config['driver'] === 'mandango') {
-            $loader->load('mandango.xml');
         }
 
         $container->setParameter('sputnik_pubsub.route', $config['route']);

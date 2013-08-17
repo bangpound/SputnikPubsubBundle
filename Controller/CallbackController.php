@@ -36,26 +36,28 @@ class CallbackController
      */
     public function process(Request $request, $id)
     {
-        $topic = $this->manager->find($id);
+        $result = $this->manager->findTopicById($id);
         $mode = $request->query->get('hub_mode');
         $message = '';
 
         if ($mode === HubSubscriberInterface::SUBSCRIBE || $mode === HubSubscriberInterface::UNSUBSCRIBE) {
-            if ($topic === null && $mode === HubSubscriberInterface::SUBSCRIBE) {
+            if ($result->isEmpty() && $mode === HubSubscriberInterface::SUBSCRIBE) {
                 $this->logger->warning(sprintf('pubsub callback: illegal %s request for topic %s', $mode, $id));
             } else {
-                $this->logger->info(sprintf('pubsub callback: %s request for topic %s [%s]', $mode, $id, $topic ?: 'deleted'));
+                $this->logger->info(sprintf('pubsub callback: %s request for topic %s [%s]', $mode, $id, ($result->isEmpty() ? $result->get() : 'deleted')));
                 $message = $request->query->get('hub_challenge');
             }
 
-        } elseif ($topic === null) {
+        } elseif ($result->isEmpty()) {
             $this->logger->warning(sprintf('pubsub callback: error processing notification - topic %s not found', $id));
 
-        } elseif (!$this->isValidNotification($request, $topic)) {
-            $this->logger->error(sprintf('pubsub callback: security check failed for topic %s [%s]', $topic->getId(), (string) $topic));
+        } elseif (!$this->isValidNotification($request, $result->get())) {
+            $this->logger->error(sprintf('pubsub callback: security check failed for topic %s [%s]', $id, (string) $result->get()));
 
         } else {
-            $this->logger->info(sprintf('pubsub callback: notification received for topic %s [%s]', $topic->getId(), (string) $topic));
+            $topic = $result->get();
+
+            $this->logger->info(sprintf('pubsub callback: notification received for topic %s [%s]', $id, (string) $topic));
 
             try {
                 $this->handler->handle($topic, $request->headers, $request->getContent());

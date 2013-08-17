@@ -21,6 +21,7 @@ class ListHubsCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        /* @var $provider \Sputnik\Bundle\PubsubBundle\Hub\HubProviderInterface */
         $provider = $this->getContainer()->get('sputnik_pubsub.hub_provider');
         foreach ($provider->getHubs() as $hub) {
             $output->writeln(sprintf('%s - %s', $hub->getName(), $hub->getUrl()));

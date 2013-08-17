@@ -28,25 +28,21 @@ class TopicManipulator
     public function create($topicUrl, $hubName)
     {
         if (!filter_var($topicUrl, FILTER_VALIDATE_URL)) {
-            throw new \InvalidArgumentException(sprintf('invalid URL: %s', $topicUrl));
+            throw new \InvalidArgumentException(sprintf('Invalid URL: %s', $topicUrl));
         }
 
-        $topic = $this->manager->create();
+        $topic = $this->manager->createTopic();
         $topic->setHubName($hubName);
         $topic->setTopicUrl($topicUrl);
 
         $id = $this->generator->generateTopicId($topic);
 
-        $current = $this->manager->find($id);
-        if ($current instanceof TopicInterface) {
-            $topic = $current;
-        }
+        $topic = $this->manager->findTopicById($id)->getOrCall(function () use ($topic) { return $topic; });
 
         $topic->setId($id);
         $topic->setTopicSecret($this->generator->generateTopicSecret($topic));
 
-        $this->manager->persist($topic);
-        $this->manager->flush();
+        $this->manager->updateTopic($topic);
 
         return $topic;
     }
@@ -61,13 +57,13 @@ class TopicManipulator
      */
     public function remove($topicUrl, $hubName)
     {
-        $topic = $this->manager->findOneBy(array('topicUrl' => $topicUrl, 'hubName' => $hubName));
-        if (!$topic instanceof TopicInterface) {
-            throw new \InvalidArgumentException(sprintf('topic not found - %s:%s', $hubName, $topicUrl));
-        }
+        $criteria = array('topicUrl' => $topicUrl, 'hubName' => $hubName);
 
-        $this->manager->remove($topic);
-        $this->manager->flush();
+        $topic = $this->manager->findTopicBy($criteria)->getOrCall(function () use ($hubName, $topicUrl) {
+            throw new \InvalidArgumentException(sprintf('Topic not found - %s:%s', $hubName, $topicUrl));
+        });
+
+        $this->manager->removeTopic($topic);
 
         return $topic;
     }

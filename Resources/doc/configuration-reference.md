@@ -7,7 +7,7 @@ sputnik_pubsub:
     live_hub: false
     route: sputnik_pubsub_callback_process
     hub_test_route: sputnik_pubsub_hub_process
-    driver: doctrine # allowed values: doctrine, doctrine_mongo, mandango
+    driver: doctrine # allowed values: doctrine, doctrine_mongo
 ```
 
 ## Examples
@@ -18,14 +18,14 @@ To enable subscriptions to live hub:
 sputnik_pubsub:
     live_hub: true
 ```
-        
+
 To change storage driver:
 
 ```yaml
 sputnik_pubsub:
     driver: doctrine_mongo
 ```
-        
+
 To change topic callback route:
 
 ```yaml

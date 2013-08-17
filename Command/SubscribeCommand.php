@@ -34,6 +34,7 @@ class SubscribeCommand extends ContainerAwareCommand
     {
         $subscriber = $this->getContainer()->get('sputnik_pubsub.hub_subscriber');
 
+        /* @var $context \Symfony\Component\Routing\RequestContext */
         $context = $this->getContainer()->get('router')->getContext();
         if ($host = $input->getOption('context-host')) {
             $context->setHost($host);

@@ -2,6 +2,7 @@
 
 namespace Sputnik\Bundle\PubsubBundle\Tests\Manipulator;
 
+use PhpOption\Option;
 use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\SampleTopic;
 use Sputnik\Bundle\PubsubBundle\Tests\Fixtures\Topic;
 use Sputnik\Bundle\PubsubBundle\Manipulator\TopicManipulator;
@@ -30,10 +31,9 @@ class TopicManipulatorTest extends \PHPUnit_Framework_TestCase
         $manipulator = $this->getManipulator();
         $topic = new Topic();
 
-        $this->topicManager->expects($this->once())->method('create')->will($this->returnValue($topic));
-        $this->topicManager->expects($this->once())->method('find');
-        $this->topicManager->expects($this->once())->method('persist')->with($this->identicalTo($topic));
-        $this->topicManager->expects($this->once())->method('flush');
+        $this->topicManager->expects($this->once())->method('createTopic')->will($this->returnValue($topic));
+        $this->topicManager->expects($this->once())->method('findTopicById')->will($this->returnValue(Option::fromValue(null)));
+        $this->topicManager->expects($this->once())->method('updateTopic')->with($this->identicalTo($topic));
 
         $this->topicGenerator->expects($this->once())->method('generateTopicId')->with($this->identicalTo($topic))->will($this->returnValue('id'));
         $this->topicGenerator->expects($this->once())->method('generateTopicSecret')->with($this->identicalTo($topic))->will($this->returnValue('secret'));
@@ -52,10 +52,9 @@ class TopicManipulatorTest extends \PHPUnit_Framework_TestCase
         $newTopic = new Topic();
         $existingTopic = new SampleTopic();
 
-        $this->topicManager->expects($this->once())->method('create')->will($this->returnValue($newTopic));
-        $this->topicManager->expects($this->once())->method('find')->will($this->returnValue($existingTopic));
-        $this->topicManager->expects($this->once())->method('persist')->with($this->identicalTo($existingTopic));
-        $this->topicManager->expects($this->once())->method('flush');
+        $this->topicManager->expects($this->once())->method('createTopic')->will($this->returnValue($newTopic));
+        $this->topicManager->expects($this->once())->method('findTopicById')->will($this->returnValue(Option::fromValue($existingTopic)));
+        $this->topicManager->expects($this->once())->method('updateTopic')->with($this->identicalTo($existingTopic));
 
         $this->topicGenerator->expects($this->once())->method('generateTopicId')->with($this->identicalTo($newTopic))->will($this->returnValue('id'));
         $this->topicGenerator->expects($this->once())->method('generateTopicSecret')->with($this->identicalTo($existingTopic))->will($this->returnValue('secret'));
@@ -73,8 +72,9 @@ class TopicManipulatorTest extends \PHPUnit_Framework_TestCase
 
         $this->topicManager
             ->expects($this->once())
-            ->method('findOneBy')
+            ->method('findTopicBy')
             ->with($this->equalTo(array('topicUrl' => 'http://topic-url', 'hubName' => 'hub')))
+            ->will($this->returnValue(Option::fromValue(null)))
         ;
 
         $manipulator->remove('http://topic-url', 'hub');
@@ -85,9 +85,8 @@ class TopicManipulatorTest extends \PHPUnit_Framework_TestCase
         $manipulator = $this->getManipulator();
         $topic = new Topic();
 
-        $this->topicManager->expects($this->once())->method('findOneBy')->will($this->returnValue($topic));
-        $this->topicManager->expects($this->once())->method('remove')->with($this->identicalTo($topic));
-        $this->topicManager->expects($this->once())->method('flush');
+        $this->topicManager->expects($this->once())->method('findTopicBy')->will($this->returnValue(Option::fromValue($topic)));
+        $this->topicManager->expects($this->once())->method('removeTopic')->with($this->identicalTo($topic));
 
         $this->assertSame($topic, $manipulator->remove('http://topic-url', 'sample'));
     }

@@ -11,7 +11,7 @@ interface HubSubscriberInterface
      * @param string $topicUrl
      * @param string $hubName
      *
-     * @return TopicInterface|boolean
+     * @return \Sputnik\Bundle\PubsubBundle\Model\TopicInterface|boolean
      *
      * @throws \InvalidArgumentException
      */
@@ -21,7 +21,7 @@ interface HubSubscriberInterface
      * @param string $topicUrl
      * @param string $hubName
      *
-     * @return TopicInterface|boolean
+     * @return \Sputnik\Bundle\PubsubBundle\Model\TopicInterface|boolean
      *
      * @throws \InvalidArgumentException
      */

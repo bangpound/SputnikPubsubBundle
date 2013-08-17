@@ -19,7 +19,6 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
         return array(
             array('doctrine'),
             array('doctrine_mongo'),
-            array('mandango'),
         );
     }
 

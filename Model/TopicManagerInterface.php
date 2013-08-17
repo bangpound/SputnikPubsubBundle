@@ -5,40 +5,36 @@ namespace Sputnik\Bundle\PubsubBundle\Model;
 interface TopicManagerInterface
 {
     /**
+     * @return string
+     */
+    public function getClass();
+
+    /**
      * @return TopicInterface
      */
-    public function create();
+    public function createTopic();
 
     /**
      * @param string $id
      *
-     * @return TopicInterface|null
+     * @return \PhpOption\Option
      */
-    public function find($id);
+    public function findTopicById($id);
 
     /**
-     * @param array $criteria
+     * @param mixed $criteria
      *
-     * @return TopicInterface|null
+     * @return \PhpOption\Option
      */
-    public function findOneBy(array $criteria);
+    public function findTopicBy($criteria);
 
     /**
      * @param TopicInterface $topic
-     *
-     * @return boolean
      */
-    public function persist($topic);
+    public function updateTopic(TopicInterface $topic);
 
     /**
      * @param TopicInterface $topic
-     *
-     * @return boolean
      */
-    public function remove($topic);
-
-    /**
-     * Flush changes.
-     */
-    public function flush();
+    public function removeTopic(TopicInterface $topic);
 }

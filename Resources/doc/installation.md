@@ -16,7 +16,7 @@ This part is straight forward and is the same as for any other Symfony bundle.
 ```json
 "sputnik/pubsub-bundle": "~0.1"
 ```
-    
+
 #### Register bundle in the kernel:
 
 ```php
@@ -85,7 +85,7 @@ To set host name to _foo_ for all console generated URLs, you can add the follow
 ```yaml
 router.request_context.host: foo
 ```
-   
+
 Now URLs generated in console will have this hostname defined. Please, read the following cookbook entry
 for more information - http://symfony.com/doc/current/cookbook/console/sending_emails.html
 
@@ -97,14 +97,14 @@ To setup storage driver, please, use `sputnik_pubsub.driver` configuration optio
 sputnik_pubsub:
     driver: doctrine_mongo # allowed values: doctrine (default), doctrine_mongo, mandango
 ```
-        
+
 __Note:__ Unlike most distributed Symfony bundles, SputnikPubsubBundle provides a complete Entities/Documents for you.
 That means you don't have to register/extend your own models/entities. This approach is used to simplify installation process.
 Power users can always figure out how to extend such entities. However, this might be a subject of change in future versions.
 
 #### Doctrine ORM
 
-This is the defaut option. You need to have `doctrine/doctrine-bundle` registered. 
+This is the defaut option. You need to have `doctrine/doctrine-bundle` registered.
 
 To create database schema, please, run:
 
@@ -112,7 +112,7 @@ To create database schema, please, run:
 $ php app/console doctrine:schema:update --dump-sql # review SQL change set
 $ php app/console doctrine:schema:update --force
 ```
-    
+
 #### Doctrine Mongo ODM
 
 Configuration needs to be updated to enable this driver:
@@ -121,27 +121,8 @@ Configuration needs to be updated to enable this driver:
 sputnik_pubsub:
     driver: doctrine_mongo
 ```
-        
+
 This driver assumes `doctrine/mongodb-odm-bundle` is installed and default database configured.
-
-#### Mandango
-
-Update config to:
-
-```yaml
-sputnik_pubsub:
-    driver: mandango
-```
-        
-This driver assumes `mandango/mandango-bundle` bundle is installed.
-
-To create Mandango models, please, run:
-
-```bash
-$ php app/console mandango:generate
-```
-    
-More information about Mandango can be found at official website - http://mandango.org.
 
 ## Next
 

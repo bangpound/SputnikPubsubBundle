@@ -28,7 +28,7 @@ interface HubProviderInterface
     public function removeHub($name);
 
     /**
-     * @return array
+     * @return HubInterface[]
      */
     public function getHubs();
 }
