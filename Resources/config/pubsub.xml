@@ -58,10 +58,10 @@
             <argument type="service" id="event_dispatcher" />
         </service>
 
-        <service id="sputnik_pubsub.listener.notification_logger" class="%sputnik_pubsub.listener.notification_logger.class%" public="false">
-            <argument type="service" id="logger" />
+        <service id="sputnik_pubsub.listener.notification_logger" class="%sputnik_pubsub.listener.notification_logger.class%">
             <tag name="kernel.event_listener" event="notification.received" method="onNotificationReceived" priority="100" />
             <tag name="monolog.logger" channel="pubsub" />
+            <argument type="service" id="logger" />
         </service>
 
         <service id="sputnik_pubsub.generator" class="%sputnik_pubsub.generator.class%" public="false" />

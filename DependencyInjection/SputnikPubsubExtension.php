@@ -4,6 +4,7 @@ namespace Sputnik\Bundle\PubsubBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
@@ -31,5 +32,17 @@ class SputnikPubsubExtension extends Extension
         }
 
         $container->setParameter('sputnik_pubsub.route', $config['route']);
+
+        if ($container->getParameter('kernel.debug')) {
+            $definition = $container->findDefinition('sputnik_pubsub.hub_subscriber');
+            $arguments = $definition->getArguments();
+            $arguments[3] = new Reference('debug.event_dispatcher');
+            $definition->setArguments($arguments);
+
+            $definition = $container->findDefinition('sputnik_pubsub.notification_handler');
+            $arguments = $definition->getArguments();
+            $arguments[0] = new Reference('debug.event_dispatcher');
+            $definition->setArguments($arguments);
+        }
     }
 }
