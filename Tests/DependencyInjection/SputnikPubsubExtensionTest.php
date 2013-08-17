@@ -12,6 +12,7 @@ class SputnikPubsubExtensionTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->container = new ContainerBuilder();
+        $this->container->setParameter('kernel.debug', true);
     }
 
     public function getDrivers()
