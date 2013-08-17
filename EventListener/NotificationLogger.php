@@ -3,11 +3,9 @@
 namespace Sputnik\Bundle\PubsubBundle\EventListener;
 
 use Psr\Log\LoggerInterface;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
 
-class LogListener implements EventSubscriberInterface
+class NotificationLogger
 {
     private $logger;
 
@@ -17,14 +15,6 @@ class LogListener implements EventSubscriberInterface
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getSubscribedEvents()
-    {
-        return array(PubsubEvents::NOTIFICATION_RECEIVED => array('onNotificationReceived', 100));
     }
 
     /**

@@ -11,9 +11,8 @@
         <parameter key="sputnik_pubsub.controller.callback.class">Sputnik\Bundle\PubsubBundle\Controller\CallbackController</parameter>
         <parameter key="sputnik_pubsub.controller.hub.class">Sputnik\Bundle\PubsubBundle\Controller\HubController</parameter>
         <parameter key="sputnik_pubsub.notification_handler.class">Sputnik\Bundle\PubsubBundle\Handler\EventNotificationHandler</parameter>
-        <parameter key="sputnik_pubsub.event_listener.log.class">Sputnik\Bundle\PubsubBundle\EventListener\LogListener</parameter>
+        <parameter key="sputnik_pubsub.listener.notification_logger.class">Sputnik\Bundle\PubsubBundle\EventListener\NotificationLogger</parameter>
         <parameter key="sputnik_pubsub.generator.class">Sputnik\Bundle\PubsubBundle\Generator\TopicGenerator</parameter>
-        <parameter key="sputnik_pubsub.event_dispatcher.class">Symfony\Component\EventDispatcher\EventDispatcher</parameter>
     </parameters>
 
     <services>
@@ -30,7 +29,7 @@
             <argument type="service" id="sputnik_pubsub.topic_manipulator" />
             <argument type="service" id="sputnik_pubsub.hub_provider" />
             <argument type="service" id="sputnik_pubsub.hub_request" />
-            <argument type="service" id="sputnik_pubsub.event_dispatcher" />
+            <argument type="service" id="event_dispatcher" />
         </service>
 
         <service id="sputnik_pubsub.hub_request" class="%sputnik_pubsub.hub_request.class%" public="false">
@@ -56,17 +55,15 @@
         </service>
 
         <service id="sputnik_pubsub.notification_handler" class="%sputnik_pubsub.notification_handler.class%">
-            <argument type="service" id="sputnik_pubsub.event_dispatcher" />
+            <argument type="service" id="event_dispatcher" />
         </service>
 
-        <service id="sputnik_pubsub.event_listener.log" class="%sputnik_pubsub.event_listener.log.class%" public="false">
+        <service id="sputnik_pubsub.listener.notification_logger" class="%sputnik_pubsub.listener.notification_logger.class%" public="false">
             <argument type="service" id="logger" />
-            <tag name="sputnik_pubsub.event_subscriber" />
+            <tag name="kernel.event_listener" event="notification.received" method="onNotificationReceived" priority="100" />
             <tag name="monolog.logger" channel="pubsub" />
         </service>
 
         <service id="sputnik_pubsub.generator" class="%sputnik_pubsub.generator.class%" public="false" />
-
-        <service id="sputnik_pubsub.event_dispatcher" class="%sputnik_pubsub.event_dispatcher.class%" />
     </services>
 </container>
