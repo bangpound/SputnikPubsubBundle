@@ -40,17 +40,10 @@ example:
 ```php
 namespace Acme\DemoBundle\EventListener;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Sputnik\Bundle\PubsubBundle\PubsubEvents;
 use Sputnik\Bundle\PubsubBundle\Event\NotificationReceivedEvent;
 
-class MyListener implements EventSubscriberInterface
+class MyListener
 {
-    public static function getSubscribedEvents()
-    {
-        return array(PubsubEvents::NOTIFICATION_RECEIVED => 'onNotificationReceived');
-    }
-
     public function onNotificationReceived(NotificationReceivedEvent $event)
     {
         $content = $event->getContent();
@@ -66,8 +59,10 @@ Next register it in dependency injection container:
 acme_demo.my_listener: 
     class: Acme\DemoBundle\EventListener\MyListener
     tags:
-        - { name: sputnik_pubsub.event_subscriber }
+        - { name: kernel.event_listener, event: notification.received, method: onNotificationReceived }
 ```
+
+Read more about creating own [events listeners](http://symfony.com/doc/current/cookbook/service_container/event_listener.html).
 
 ## While in development
 
@@ -86,7 +81,7 @@ In that way you can "emulate" hub notification for topic updates and test your l
 
 ## Debug
 
-There is a [LogListener](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/EventListener/LogListener.php)
+There is a [NotificationLogger](https://github.com/sputnik-project/SputnikPubsubBundle/blob/master/EventListener/NotificationLogger.php)
 implemented, which logs notification information. This is handy if you want to review what kind of notification arrive from hub.
 
 ## Next
