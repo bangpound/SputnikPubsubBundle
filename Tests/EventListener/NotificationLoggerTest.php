@@ -23,7 +23,7 @@ class NotificationLoggerTest extends \PHPUnit_Framework_TestCase
         $logger = $this->getMock('Psr\\Log\\LoggerInterface');
         $listener = new NotificationLogger($logger);
 
-        $message = sprintf("Pubsub notification:\nTopic: %s [%s]\nHeaders: \n%s\nContent:\n%s", $topic, $topic->getId(), $this->flattenArray($headers), $content);
+        $message = sprintf("Pubsub notification:\nTopic: %s [%s]\nHeaders: \n%s\nContent:\n%s", $topic, $topic->getId(), $this->flattenArray($headers->all()), $content);
 
         $logger
             ->expects($this->once())
