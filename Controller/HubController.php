@@ -5,8 +5,8 @@ namespace Sputnik\Bundle\PubsubBundle\Controller;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Guzzle\Http\ClientInterface as HttpClient;
-use Guzzle\Http\Exception\ClientErrorResponseException;
+use GuzzleHttp\ClientInterface as HttpClient;
+use GuzzleHttp\Exception\ClientException as ClientErrorResponseException;
 
 /**
  * Simple Hub implementation.
@@ -48,7 +48,7 @@ class HubController
         $callback = $request->get('hub_callback');
 
         try {
-            $response = $this->httpClient->get($callback . '?hub_mode=' . $mode . '&hub_challenge=' . $challenge)->send();
+            $response = $this->httpClient->request('get', $callback . '?hub_mode=' . $mode . '&hub_challenge=' . $challenge);
         } catch (ClientErrorResponseException $e) {
             $this->logger->error('hub: error getting confirmation from callback URL: ' . $callback);
 

@@ -15,7 +15,7 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->generator = $this->getMockBuilder('Symfony\\Component\\Routing\\Generator\\UrlGeneratorInterface')->getMock();
-        $this->httpClient = $this->getMockBuilder('Guzzle\\Http\\Client')->setMethods(array('post', 'addPostFields', 'setAuth'))->getMock();
+        $this->httpClient = $this->getMockBuilder('GuzzleHttp\\Client')->setMethods(array('request'))->getMock();
     }
 
     public function getHubSubscriptionModes()
@@ -79,12 +79,7 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
      */
     private function assertPostToUrlReturns($url, array $params, $code)
     {
-        $request = $this->getMockBuilder('Guzzle\\Http\\Message\\Request')
-            ->disableOriginalConstructor()
-            ->setMethods(array('send'))
-            ->getMock()
-        ;
-        $response = $this->getMockBuilder('Guzzle\\Http\\Message\\Response')
+        $response = $this->getMockBuilder('GuzzleHttp\\Psr7\\Response')
             ->disableOriginalConstructor()
             ->setMethods(array('getStatusCode'))
             ->getMock()
@@ -92,27 +87,14 @@ class HubRequestTest extends \PHPUnit_Framework_TestCase
 
         $this->httpClient
             ->expects($this->once())
-            ->method('post')
-            ->with($this->equalTo($url))
-            ->will($this->returnSelf())
-        ;
-        $this->httpClient
-            ->expects($this->once())
-            ->method('addPostFields')
-            ->with($this->equalTo($params))
-            ->will($this->returnValue($request))
-        ;
-        $this->httpClient
-            ->expects($this->once())
-            ->method('setAuth')
-            ->with($this->equalTo('username'), $this->equalTo('password'))
-        ;
-
-        $request
-            ->expects($this->once())
-            ->method('send')
+            ->method('request')
+            ->with('post', $this->equalTo($url), array(
+                'form_params' => $params,
+                'auth' => ['username', 'password']
+            ))
             ->will($this->returnValue($response))
         ;
+
         $response
             ->expects($this->once())
             ->method('getStatusCode')

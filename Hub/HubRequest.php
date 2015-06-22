@@ -4,8 +4,8 @@ namespace Sputnik\Bundle\PubsubBundle\Hub;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Guzzle\Http\ClientInterface as HttpClient;
-use Guzzle\Http\Exception\ClientErrorResponseException;
+use GuzzleHttp\ClientInterface as HttpClient;
+use GuzzleHttp\Exception\ClientException as ClientErrorResponseException;
 use Sputnik\Bundle\PubsubBundle\Model\TopicInterface;
 
 class HubRequest
@@ -37,7 +37,7 @@ class HubRequest
      * @param TopicInterface $topic
      * @param HubInterface   $hub
      *
-     * @throws \Exception|\Guzzle\Http\Exception\ClientErrorResponseException
+     * @throws \Exception|ClientErrorResponseException
      *
      * @return boolean
      */
@@ -58,13 +58,15 @@ class HubRequest
             $hubUrl = $hub->getUrl();
         }
 
-        $request = $this->httpClient->post($hubUrl);
+        $options = array(
+            'form_params' => $params,
+        );
         if ($hub instanceof SuperfeedrHub) {
-            $request->setAuth($hub->getUsername(), $hub->getPassword());
+            $options['auth'] = [$hub->getUsername(), $hub->getPassword()];
         }
 
         try {
-            $response = $request->addPostFields($params)->send();
+            $response = $this->httpClient->request('post', $hubUrl, $options);
         } catch (ClientErrorResponseException $e) {
             if ($this->hubTestRoute) {
                 throw $e;

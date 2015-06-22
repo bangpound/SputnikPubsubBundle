@@ -68,7 +68,7 @@ class PushCommand extends ContainerAwareCommand
         $signature = hash_hmac('sha1', $body, $topic->getTopicSecret());
 
         $client = $this->getContainer()->get('sputnik_pubsub.http_client');
-        /* @var $response \Guzzle\Http\Message\Response */
+        /* @var $response \GuzzleHttp\Psr7\Response */
         $response = $client->post($callback, array('X-Hub-Signature' => 'sha1=' . $signature), $body)->send();
         if ($response->getStatusCode() !== 200) {
             $output->writeln(sprintf('<error>HTTP code returned: %d</error>', $response->getStatusCode()));

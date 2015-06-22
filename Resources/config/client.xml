@@ -4,25 +4,34 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="sputnik_pubsub.guzzle.class">Guzzle\Http\Client</parameter>
-        <parameter key="sputnik_pubsub.guzzle.log.monolog_adapter.class">Guzzle\Log\MonologLogAdapter</parameter>
-        <parameter key="sputnik_pubsub.guzzle.plugin.log.class">Guzzle\Plugin\Log\LogPlugin</parameter>
+        <parameter key="sputnik_pubsub.guzzle.class">GuzzleHttp\Client</parameter>
+        <parameter key="sputnik_pubsub.guzzle.stack.class">GuzzleHttp\HandlerStack</parameter>
+        <parameter key="sputnik_pubsub.guzzle.middleware.class">GuzzleHttp\Middleware</parameter>
+        <parameter key="sputnik_pubsub.guzzle.message_formatter.class">GuzzleHttp\MessageFormatter</parameter>
     </parameters>
 
     <services>
         <service id="sputnik_pubsub.guzzle" class="%sputnik_pubsub.guzzle.class%">
-            <call method="addSubscriber">
-                <argument type="service" id="sputnik_pubsub.guzzle.plugin.log" />
+            <argument type="collection">
+                <argument type="service" key="stack" id="sputnik_pubsub.guzzle.stack"/>
+            </argument>
+        </service>
+
+        <service id="sputnik_pubsub.guzzle.stack" class="%sputnik_pubsub.guzzle.stack.class%" public="false">
+            <factory class="GuzzleHttp\HandlerStack" method="create" />
+            <call method="push">
+                <argument type="service" id="sputnik_pubsub.guzzle.logger" />
             </call>
         </service>
 
-        <service id="sputnik_pubsub.guzzle.plugin.log" class="%sputnik_pubsub.guzzle.plugin.log.class%" public="false">
-            <argument type="service" id="sputnik_pubsub.guzzle.log.monolog_adapter" />
+        <service id="sputnik_pubsub.guzzle.message_formatter" class="%sputnik_pubsub.guzzle.message_formatter.class%" public="false">
+
         </service>
 
-        <service id="sputnik_pubsub.guzzle.log.monolog_adapter" class="%sputnik_pubsub.guzzle.log.monolog_adapter.class%" public="false">
-            <argument type="service" id="logger" />
-            <tag name="monolog.logger" channel="pubsub" />
+        <service id="sputnik_pubsub.guzzle.logger" class="callback" public="false">
+            <factory class="GuzzleHttp\Middleware" method="log" />
+            <argument type="service" id="logger"></argument>
+            <argument type="service" id="sputnik_pubsub.guzzle.message_formatter"></argument>
         </service>
 
         <service id="sputnik_pubsub.http_client" alias="sputnik_pubsub.guzzle" />
