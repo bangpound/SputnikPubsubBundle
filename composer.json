@@ -23,9 +23,8 @@
         "doctrine/mongodb-odm-bundle": "Required for ODM backend."
     },
     "autoload": {
-        "psr-0": { "Sputnik\\Bundle\\PubsubBundle": "" }
+        "psr-4": { "Sputnik\\Bundle\\PubsubBundle\\": "" }
     },
-    "target-dir": "Sputnik/Bundle/PubsubBundle",
     "extra": {
         "branch-alias": {
             "dev-develop": "0.4.x-dev"
