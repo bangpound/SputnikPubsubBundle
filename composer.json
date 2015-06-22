@@ -28,7 +28,7 @@
     "target-dir": "Sputnik/Bundle/PubsubBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3.x-dev"
+            "dev-develop": "0.4.x-dev"
         }
     }
 }
