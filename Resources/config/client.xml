@@ -24,14 +24,12 @@
             </call>
         </service>
 
-        <service id="sputnik_pubsub.guzzle.message_formatter" class="%sputnik_pubsub.guzzle.message_formatter.class%" public="false">
-
-        </service>
+        <service id="sputnik_pubsub.guzzle.message_formatter" class="%sputnik_pubsub.guzzle.message_formatter.class%" public="false" />
 
         <service id="sputnik_pubsub.guzzle.logger" class="callback" public="false">
             <factory class="GuzzleHttp\Middleware" method="log" />
-            <argument type="service" id="logger"></argument>
-            <argument type="service" id="sputnik_pubsub.guzzle.message_formatter"></argument>
+            <argument type="service" id="logger" />
+            <argument type="service" id="sputnik_pubsub.guzzle.message_formatter" />
         </service>
 
         <service id="sputnik_pubsub.http_client" alias="sputnik_pubsub.guzzle" />
